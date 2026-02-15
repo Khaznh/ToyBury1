@@ -9,6 +9,8 @@ public class FirstPersonMovement : MonoBehaviour
     private CharacterController controller;
     private PlayerInput input;
 
+    Vector2 temp;
+
     void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -27,7 +29,11 @@ public class FirstPersonMovement : MonoBehaviour
 
     private void Update()
     {
-        Vector2 temp = HandleInput();
+        temp = HandleInput();
+    }
+
+    private void FixedUpdate()
+    {
         MovePlayer(temp);
     }
 
@@ -39,6 +45,6 @@ public class FirstPersonMovement : MonoBehaviour
     private void MovePlayer(Vector2 moveVec)
     {
         Vector3 move = transform.right * moveVec.x + transform.forward * moveVec.y + Vector3.down * gravity;
-        controller.Move(speed * Time.deltaTime * move);
+        controller.Move(speed * Time.fixedDeltaTime * move);
     }
 }

@@ -21,3 +21,7 @@ MonoBehaviour:
     value: Press E to pick up
   - key: 4
     value: Press E to use
+  - key: 9
+    value: Press E to pick up
+  - key: 5
+    value: Press E to place/take the doll

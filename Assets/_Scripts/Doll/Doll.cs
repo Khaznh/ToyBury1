@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Doll : MonoBehaviour
+public class Doll : CanPickUpItem
 {
     public DollConfig dollSO;
 
