@@ -9,7 +9,9 @@ public enum InteractableType
     Camera,
     CallName,
     Music,
-    Doll
+    Doll,
+    ReportPaper,
+    StoryPaper,
 }
-
+//-0.017, 0.1
 
