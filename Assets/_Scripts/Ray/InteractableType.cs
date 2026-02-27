@@ -12,6 +12,7 @@ public enum InteractableType
     Doll,
     ReportPaper,
     StoryPaper,
+    Ring
 }
 //-0.017, 0.1
 

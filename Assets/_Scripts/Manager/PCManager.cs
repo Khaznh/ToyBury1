@@ -24,6 +24,18 @@ public class PCManager : MonoBehaviour
         ShowMainMenu();
     }
 
+    public void TryRunTest()
+    {
+        if (GameController.Instance.IsDollOnChair())
+        {
+            ShowTestScreen();
+        }
+        else
+        {
+            ShowErrorScreen();
+        }
+    }
+
     public void ExitToComputer()
     {
         playerCamera.gameObject.SetActive(true);
@@ -49,6 +61,8 @@ public class PCManager : MonoBehaviour
         footer.SetActive(true);
         mainMenuContent.SetActive(true);
     }
+
+
 
     public void ShowErrorScreen()
     {

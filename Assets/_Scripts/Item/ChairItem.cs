@@ -25,6 +25,7 @@ public class ChairItem : Item
             PlayerController.Instance.hand.transform.GetChild(0).SetParent(sitTransform);
             sitTransform.transform.GetChild(0).localPosition = Vector3.zero;
             sitTransform.transform.GetChild(0).localRotation = Quaternion.Euler(Vector3.zero);
+            sitTransform.transform.GetChild(0).GetComponent<BoxCollider>().isTrigger = true;
             return;
         }
 
@@ -37,6 +38,7 @@ public class ChairItem : Item
         sitTransform.transform.GetChild(0).SetParent(PlayerController.Instance.hand.transform);
         PlayerController.Instance.hand.transform.GetChild(0).localPosition = Vector3.zero;
         PlayerController.Instance.hand.transform.GetChild(0).localRotation = Quaternion.Euler(Vector3.zero);
+        PlayerController.Instance.hand.transform.GetChild(0).GetComponent<BoxCollider>().isTrigger = false;
     }
 
     public void ThrowAwayItem(GameObject itemToThrow)

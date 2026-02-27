@@ -665,7 +665,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Photograph Capture
+  m_text: Physical Discomfort Testing
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1347,8 +1347,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReportPaperItem
   playerController: {fileID: 0}
-  offsetPos: {x: -0.017, y: 0.1, z: 0}
-  offsetRot: {x: 90, y: 0, z: 0}
+  offsetPos: {x: -0.075, y: 0.1, z: 0}
+  offsetRot: {x: -90, y: 40, z: 0}
+  testResultImgs:
+  - {fileID: 6414324460114665954}
+  - {fileID: 6398369360083479277}
+  - {fileID: 2806183463880400278}
+  - {fileID: 572616743448643725}
+  - {fileID: 6305724021947893595}
 --- !u!1 &6728952076908712685
 GameObject:
   m_ObjectHideFlags: 0
