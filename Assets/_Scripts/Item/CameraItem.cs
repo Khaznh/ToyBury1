@@ -5,6 +5,8 @@ using UnityEngine;
 public class CameraItem : Item
 {
     [SerializeField] private Light cameraLight;
+    [SerializeField] private float showTime = 3f;
+    [SerializeField] private GameObject cameraCanva;
 
     [Header("Flash Settings")]
     [SerializeField] private float flashIntensityPeak = 8f;
@@ -23,6 +25,11 @@ public class CameraItem : Item
     public override void Interact()
     {
         base.Interact();
+
+        if (GameController.Instance.sitTranForCamera.childCount == 0)
+        {
+            return;
+        }
 
         Debug.Log("Camera Clicked");
         if (!isTakingPhoto)
@@ -62,6 +69,10 @@ public class CameraItem : Item
         }
 
         cameraLight.gameObject.SetActive(false);
-        isTakingPhoto = false; 
+        cameraCanva.GetComponent<CameraCanva>().dollPicture.sprite = GameController.Instance.sitTranForCamera.GetComponentInChildren<Doll>().dollSO.dollPicure;
+        cameraCanva.SetActive(true);
+        yield return new WaitForSeconds(showTime);
+        cameraCanva.SetActive(false);
+        isTakingPhoto = false;
     }
 }

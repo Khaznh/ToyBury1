@@ -23,7 +23,7 @@ public class TempurationItem : CanPickUpItem
     {
         base.Use();
 
-        if (RaycastSource.Instance.currentObject == null || RaycastSource.Instance.currentObject.transform.GetComponent<Doll>() == null)
+        if (RaycastSource.Instance.currentObject == null || RaycastSource.Instance.currentObject.transform.GetComponentInChildren<Doll>() == null)
         {
             float temp = Random.Range(15f, 22f);
             temp = Mathf.Round(temp * 10f) / 10f;
@@ -31,7 +31,7 @@ public class TempurationItem : CanPickUpItem
             TempScreen.Instance.ShowTemp(temp);
         } else
         {
-            RaycastSource.Instance?.currentObject?.transform.GetComponent<Doll>()?.InteractWithDoll(InteractableType.TempChecker);
+            RaycastSource.Instance?.currentObject?.transform.GetComponentInChildren<Doll>()?.InteractWithDoll(InteractableType.TempChecker);
         }
     }
 

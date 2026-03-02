@@ -5,10 +5,14 @@ using UnityEngine.UI;
 
 public class GameController : Singleton<GameController>
 {
-    [Header("SFX")]
-    [SerializeField] private AudioEventSO sfxChannel;
+    [Header("Condition")]
+    public bool isInAudioTest = false;
 
-    [SerializeField] private AudioClip audioTestTheme;
+    public bool isTestAudio = false;
+    public bool isTempuration = false;
+    public bool isScissor = false;
+    public bool isCallName = false;
+    public bool isPhotoTaken = false;
 
     [Header("Chair")]
     public Transform sitTranForCamera;
@@ -38,6 +42,17 @@ public class GameController : Singleton<GameController>
 
     public Sprite safeImgSource;
     public Sprite unsafeImgSource;
+
+    //For condition
+    public void ResetCondition()
+    {
+        isCallName = false;
+        isTempuration = false;
+        isScissor = false;
+        isCallName = true;
+        isPhotoTaken = false;
+    }
+
 
     //For PC
     public bool IsDollOnChair()
@@ -90,6 +105,11 @@ public class GameController : Singleton<GameController>
         HideAllPaper();
 
         targetCanva.SetActive(true);
+    }
+
+    public void HideTargetCanva()
+    {
+        targetCanva.SetActive(false);
     }
 
     public void ShowReportPaper()

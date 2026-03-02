@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
 
@@ -6,8 +7,14 @@ public class PCManager : MonoBehaviour
     [SerializeField] private CinemachineCamera computerCamera;
     [SerializeField] private CinemachineCamera playerCamera;
 
+    [Header("SFX")]
+    [SerializeField] private AudioEventSO sfxChannel;
+    [SerializeField] private AudioSource computerAudioSource;
+    [SerializeField] private AudioClip audioTestTheme;
+
     [Header("UI component")]
     [SerializeField] private GameObject errorAllContent;
+    [SerializeField] private GameObject testAllContent;
     [SerializeField] private GameObject header;
     [SerializeField] private GameObject footer;
 
@@ -24,7 +31,7 @@ public class PCManager : MonoBehaviour
         ShowMainMenu();
     }
 
-    public void TryRunTest()
+    public void TryGoToRunTest()
     {
         if (GameController.Instance.IsDollOnChair())
         {
@@ -36,12 +43,32 @@ public class PCManager : MonoBehaviour
         }
     }
 
+    public void RunningTest()
+    {
+        HideAll();
+        body.SetActive(false);
+        testAllContent.SetActive(true);
+        sfxChannel.RaiseEvent(audioTestTheme, computerAudioSource);
+        GameController.Instance.isInAudioTest = true;
+
+        StartCoroutine(RunningTestCourotine());
+    }
+
+    private IEnumerator RunningTestCourotine()
+    {
+        yield return new WaitForSeconds(audioTestTheme.length);
+        GameController.Instance.isInAudioTest = false;
+        testAllContent.SetActive(false);
+        ShowMainMenu();
+    }
+
     public void ExitToComputer()
     {
         playerCamera.gameObject.SetActive(true);
         CanvaManager.Instance.gameObject.SetActive(true);
         computerCamera.gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+        GameController.Instance.SetPlayerCursor(false);
     }
 
     public void OpenComputer()
@@ -50,6 +77,7 @@ public class PCManager : MonoBehaviour
         CanvaManager.Instance.gameObject.SetActive(false);
         computerCamera.gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
+        GameController.Instance.SetPlayerCursor(true);
     }
 
     public void ShowMainMenu()

@@ -38,26 +38,51 @@ public class TestPaperCanva : MonoBehaviour
 
     public void AudioTesting()
     {
+        if (!GameController.Instance.isTestAudio)
+        {
+            return;
+        }
+
         ToggleResult(0);
     }
 
     public void NameCall()
     {
+        if (!GameController.Instance.isCallName)
+        {
+            return;
+        }
+
         ToggleResult(1);
     }
 
     public void PhotographCapture()
     {
+        if (!GameController.Instance.isPhotoTaken)
+        {
+            return;
+        }
+
         ToggleResult(2);
     }
 
     public void TempuratureTest()
     {
+        if (!GameController.Instance.isTempuration)
+        {
+            return;
+        }
+
         ToggleResult(3);
     }
 
     public void PhysicalDiscomfortTesting()
     {
+        if (!GameController.Instance.isScissor)
+        {
+            return;
+        }
+
         ToggleResult(4);
     }
 

@@ -9,6 +9,11 @@ public class ChairItem : Item
     {
         base.Interact();
 
+        if (GameController.Instance.isInAudioTest)
+        {
+            return;
+        }
+
         // dat bup be len ghe
         if (sitTransform.childCount == 0)
         {
