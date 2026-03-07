@@ -5,8 +5,14 @@ using UnityEngine.UI;
 
 public class GameController : Singleton<GameController>
 {
+    [Header("Result")]
+    public TestResult[] dollTestResult;
+    public TestResult[] playerResult;
+
     [Header("Condition")]
     public bool isInAudioTest = false;
+
+    public bool canCallName = false;
 
     public bool isTestAudio = false;
     public bool isTempuration = false;
@@ -18,9 +24,14 @@ public class GameController : Singleton<GameController>
     public Transform sitTranForCamera;
     public Transform sitTranForNorSit;
 
+    [Header("Checker")]
+    public Transform checkTranForSafe;
+    public Transform checkTranForUnSafe;
+
     [Header("Doll")]
-    public List<Doll> dollsToCheck;
-    public Doll currentDoll;
+    public List<GameObject> dollsToCheck;
+    public List<GameObject> dollsHasDone;
+    public GameObject currentDoll;
 
     public Transform spawnPointForDoll;
 
@@ -65,6 +76,61 @@ public class GameController : Singleton<GameController>
         return sitTranForNorSit.childCount > 0;
     }
 
+    //Test if player test is correct or not
+    public bool IsPlayerTestCorrect()
+    {
+        for (int i = 0; i < playerResult.Length; i++)
+        {
+            if (playerResult[i] != dollTestResult[i])
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    //For Submit Doll
+    public void SubmitDoll(DollStatus playerDesition)
+    {
+        for (int i = 0; i < playerResult.Length; i++)
+        {
+            if (playerResult[i] == TestResult.None)
+            {
+                return;
+            }
+        }
+
+        if (currentDoll.GetComponent<Doll>().dollSO.dollStatus == playerDesition)
+        {
+            currentDoll.GetComponent<Doll>().dollTestStatus.isTypeCorrect = true;
+        }
+        else
+        {
+            currentDoll.GetComponent<Doll>().dollTestStatus.isTypeCorrect = false;
+        }
+
+        currentDoll.GetComponent<Doll>().dollTestStatus.isTestCorrect = IsPlayerTestCorrect();
+        currentDoll.gameObject.SetActive(false);
+        currentDoll.transform.SetParent(null);
+
+        dollsHasDone.Add(currentDoll);
+        dollsToCheck.RemoveAt(0);
+        currentDoll = null;
+    }
+
+    public bool CanSubmitDoll()
+    {
+        for (int i = 0; i < playerResult.Length; i++)
+        {
+            if (playerResult[i] == TestResult.None)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
     // For spawn doll
     public void SpawnInvestigationSession()
     {
@@ -80,14 +146,13 @@ public class GameController : Singleton<GameController>
         }
 
         currentDoll = Instantiate(dollsToCheck[0], spawnPointForDoll.position, spawnPointForDoll.rotation);
-
+        dollTestResult = currentDoll.GetComponent<Doll>().dollSO.testResults;
         if (paperIns != null)
         {
             Destroy(paperIns);
         }
         storyPaper.GetComponent<StoryPaperCanva>().UpdateStoryPaper(currentDoll.GetComponent<Doll>().dollSO);
         paperIns = Instantiate(paperPrefab, spawnPointForPaper.position, spawnPointForPaper.rotation);
-        dollsToCheck.RemoveAt(0);
     }
 
     // For UI paper

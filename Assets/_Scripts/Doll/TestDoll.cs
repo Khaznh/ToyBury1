@@ -15,6 +15,7 @@ public class TestDoll : Doll
         base.InteractWithScissor();
 
         GameController.Instance.isScissor = true;
+        Debug.Log("BBBBBBBBBBBB");
     }
 
     protected override void InteractWithCamera()
@@ -22,6 +23,7 @@ public class TestDoll : Doll
         base.InteractWithCamera();
 
         GameController.Instance.isPhotoTaken = true;
+        Debug.Log("CCCCCCCCCCCCCC");
     }
 
     protected override void InteractWithCallName()
@@ -29,6 +31,7 @@ public class TestDoll : Doll
         base.InteractWithCallName();
 
         GameController.Instance.isCallName = true;
+        Debug.Log("DDDDDDDDDDDD");
     }
 
     protected override void InteractWithMusic()
@@ -36,6 +39,7 @@ public class TestDoll : Doll
         base.InteractWithMusic();
 
         GameController.Instance.isInAudioTest = true;
+        Debug.Log("EEEEEEEEEEEEEE");
     }
 
     public override void Interact()

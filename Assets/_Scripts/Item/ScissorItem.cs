@@ -21,7 +21,14 @@ public class ScissorItem : CanPickUpItem
 
     public override void Use()
     {
+        base.Use();
 
+        if (RaycastSource.Instance.currentObject.transform.GetComponentInChildren<Doll>() == null)
+        {
+            return;
+        }
+
+        RaycastSource.Instance?.currentObject?.transform.GetComponentInChildren<Doll>()?.InteractWithDoll(InteractableType.Scissor);
     }
 
     public override void OnExitItem()

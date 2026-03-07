@@ -22,6 +22,11 @@ public class ReportPaperItem : CanPickUpItem
         testResults = new TestResult[5];
     }
 
+    private void OnEnable()
+    {
+        GameController.Instance.playerResult = testResults;
+    }
+
     public override void Interact()
     {
         if (playerController.hand.transform.childCount != 0)

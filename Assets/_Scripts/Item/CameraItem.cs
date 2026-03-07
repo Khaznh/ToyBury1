@@ -70,6 +70,7 @@ public class CameraItem : Item
 
         cameraLight.gameObject.SetActive(false);
         cameraCanva.GetComponent<CameraCanva>().dollPicture.sprite = GameController.Instance.sitTranForCamera.GetComponentInChildren<Doll>().dollSO.dollPicure;
+        GameController.Instance.sitTranForCamera.GetComponentInChildren<Doll>().InteractWithDoll(InteractableType.Camera);
         cameraCanva.SetActive(true);
         yield return new WaitForSeconds(showTime);
         cameraCanva.SetActive(false);

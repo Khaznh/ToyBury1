@@ -49,8 +49,8 @@ public class PCManager : MonoBehaviour
         body.SetActive(false);
         testAllContent.SetActive(true);
         sfxChannel.RaiseEvent(audioTestTheme, computerAudioSource);
-        GameController.Instance.isInAudioTest = true;
-
+        GameController.Instance.isTestAudio = true;
+        GameController.Instance.sitTranForNorSit.GetComponentInChildren<Doll>().InteractWithDoll(InteractableType.Music);
         StartCoroutine(RunningTestCourotine());
     }
 

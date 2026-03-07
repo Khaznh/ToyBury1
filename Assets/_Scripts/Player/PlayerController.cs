@@ -46,6 +46,16 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (playerInput.Player.Use.WasPressedThisFrame())
         {
+            if (GameController.Instance.canCallName)
+            {
+                if (GameController.Instance.isInAudioTest)
+                {
+                    return;
+                }
+
+                GameController.Instance.sitTranForNorSit.GetComponentInChildren<Doll>().InteractWithDoll(InteractableType.CallName);
+            }
+
             if (hand.transform.childCount == 0)
             {
                 return;

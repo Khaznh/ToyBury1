@@ -3,6 +3,7 @@ using UnityEngine;
 public class Doll : CanPickUpItem
 {
     public DollConfig dollSO;
+    public DollTestStatus dollTestStatus;
 
     public virtual void InteractWithDoll(InteractableType type)
     {
@@ -52,4 +53,11 @@ public class Doll : CanPickUpItem
     {
 
     }
+}
+
+[System.Serializable]
+public class DollTestStatus
+{
+    public bool isTestCorrect = false;
+    public bool isTypeCorrect = false;
 }
