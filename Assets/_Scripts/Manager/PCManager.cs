@@ -1,11 +1,16 @@
 using System.Collections;
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PCManager : MonoBehaviour
+public class PCManager : Singleton<PCManager>
 {
     [SerializeField] private CinemachineCamera computerCamera;
     [SerializeField] private CinemachineCamera playerCamera;
+
+    [SerializeField] private GameObject dollCategoryPrefap;
+    [SerializeField] private DollConfig chooseDoll;
 
     [Header("SFX")]
     [SerializeField] private AudioEventSO sfxChannel;
@@ -23,7 +28,10 @@ public class PCManager : MonoBehaviour
     [SerializeField] private GameObject reportContent;
     [SerializeField] private GameObject testContent;
     [SerializeField] private GameObject helpContent;
+    public GameObject dollInfoContent;
     [SerializeField] private GameObject body;
+
+    [SerializeField] private GameObject reportDollList;
 
     private void Start()
     {
@@ -88,6 +96,8 @@ public class PCManager : MonoBehaviour
         header.SetActive(true);
         footer.SetActive(true);
         mainMenuContent.SetActive(true);
+
+        chooseDoll = null;
     }
 
 
@@ -116,6 +126,8 @@ public class PCManager : MonoBehaviour
         header.SetActive(true);
         footer.SetActive(true);
         reportContent.SetActive(true);
+
+        LoadTestedDoll();
     }
 
     public void ShowTestScreen()
@@ -132,5 +144,35 @@ public class PCManager : MonoBehaviour
         header.SetActive(true);
         footer.SetActive(true);
         helpContent.SetActive(true);
+    }
+
+    public void ShowDollInfoContentCanva()
+    {
+        HideAll();
+
+        header.SetActive(true);
+        footer.SetActive(true);
+        dollInfoContent.SetActive(true);
+    }
+
+    private void LoadTestedDoll()
+    {
+        int child = reportDollList.transform.childCount;
+        for (int i = 0; i < child; i++)
+        {
+            Destroy(reportDollList.transform.GetChild(i).gameObject);
+        }
+        
+        foreach(GameObject doll in GameController.Instance.dollsHasDone)
+        {
+            DollCategory dollCategory = Instantiate(dollCategoryPrefap, reportDollList.transform).GetComponent<DollCategory>();
+            dollCategory.dollHolder = doll.GetComponent<Doll>();
+            dollCategory.nameText.text = doll.GetComponent<Doll>().dollSO.dollName.ToString();
+        }
+    }
+
+    public void ChooseDollToWatchReport()
+    {
+        ShowDollInfoContentCanva();
     }
 }

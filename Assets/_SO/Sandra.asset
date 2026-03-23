@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528ecde27feefd74eb359b784c14f552, type: 3}
+  m_Name: Sandra
+  m_EditorClassIdentifier: Assembly-CSharp::DollConfig
+  dollName: Sandra
+  dollOwner: Ingrid Caple, 9 y.o, female
+  dollStory: This doll was owned by young Ingrid Caple. It was found next to a lake,
+    where Ingrid has tragically drowned. Despite Ingrid carrying Sandra everywhere,
+    the doll was found tossed next to the lake. It was never discovered as to why
+    Ingrid commited suicide, or if it even was a suicide.
+  dollReason: 
+  dollAvatar: {fileID: 0}
+  dollPicure: {fileID: 0}
+  dollStatus: 1
+  testResults: 0100000001000000010000000100000001000000

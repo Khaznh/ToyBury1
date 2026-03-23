@@ -23,6 +23,11 @@ public class ScissorItem : CanPickUpItem
     {
         base.Use();
 
+        if (RaycastSource.Instance.currentObject == null)
+        {
+            return;
+        }
+
         if (RaycastSource.Instance.currentObject.transform.GetComponentInChildren<Doll>() == null)
         {
             return;

@@ -147,6 +147,7 @@ public class GameController : Singleton<GameController>
 
         currentDoll = Instantiate(dollsToCheck[0], spawnPointForDoll.position, spawnPointForDoll.rotation);
         dollTestResult = currentDoll.GetComponent<Doll>().dollSO.testResults;
+
         if (paperIns != null)
         {
             Destroy(paperIns);
