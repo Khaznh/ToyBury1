@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528ecde27feefd74eb359b784c14f552, type: 3}
+  m_Name: Millie
+  m_EditorClassIdentifier: Assembly-CSharp::DollConfig
+  dollName: Millie
+  dollOwner: Danna Ferko, 6 y.o., female, alive
+  dollStory: Danna Ferko has ran away from home, only to be found two days later
+    in a shocking state. The only item that Danna had, was her favourite doll, "Millie".
+    When Danna was found, she, and her doll were lying next to a corpse. The body
+    was found out to be Gregory Ferko, Danna's uncle, who has gone missing a few
+    weeks before the incident.
+  dollReason: "Millie is nothing more than a simple, unpossessed doll. However, the
+    story of Danna and her uncle Gregory is far more tragic. After further investigation,
+    it was discovered that Gregory, who often spent time babysitting Danna, took
+    his own life at the spot where they loved to go for walks together. When Gregory
+    went missing, Danna set out to find him, only to discover his lifeless body at
+    their favorite place. The reason behind Gregory's suicide was linked to his long
+    struggle with depression. According to Danna's mother\u2014Gregory's sister\u2014the
+    two had recently argued about Gregory's alcohol abuse. Following the argument,
+    Gregory was no longer allowed to see Danna, whom he had once described as his
+    only source of happiness."
+  dollAvatar: {fileID: -117682030, guid: 2f66b5e3ecc2afc45bad684bf5cb076d, type: 3}
+  dollPicure: {fileID: 0}
+  dollStatus: 1
+  testResults: 0100000001000000010000000100000001000000

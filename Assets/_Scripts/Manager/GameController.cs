@@ -101,7 +101,7 @@ public class GameController : Singleton<GameController>
             }
         }
 
-        if (currentDoll.GetComponent<Doll>().dollSO.dollStatus == playerDesition)
+        if (currentDoll.GetComponent<Doll>().dollSO.dollStatus == playerDesition || currentDoll.GetComponent<Doll>().dollSO.dollStatus ==  DollStatus.Both)
         {
             currentDoll.GetComponent<Doll>().dollTestStatus.isTypeCorrect = true;
         }
@@ -111,8 +111,8 @@ public class GameController : Singleton<GameController>
         }
 
         currentDoll.GetComponent<Doll>().dollTestStatus.isTestCorrect = IsPlayerTestCorrect();
-        currentDoll.gameObject.SetActive(false);
         currentDoll.transform.SetParent(null);
+        currentDoll.transform.position = new Vector3(22.332f, 0.317f, 3.03f);
 
         dollsHasDone.Add(currentDoll);
         dollsToCheck.RemoveAt(0);
@@ -132,7 +132,7 @@ public class GameController : Singleton<GameController>
     }
 
     // For spawn doll
-    public void SpawnInvestigationSession()
+    public void SpawnInvestigationSession(GameObject spawnDoll = null)
     {
         if (currentDoll != null)
         {
@@ -145,7 +145,17 @@ public class GameController : Singleton<GameController>
             return;
         }
 
-        currentDoll = Instantiate(dollsToCheck[0], spawnPointForDoll.position, spawnPointForDoll.rotation);
+        if (spawnDoll != null)
+        {
+            currentDoll = spawnDoll;
+            currentDoll.transform.position = spawnPointForDoll.position;
+
+        }
+        else
+        {
+            currentDoll = Instantiate(dollsToCheck[0], spawnPointForDoll.position, spawnPointForDoll.rotation);
+        }
+
         dollTestResult = currentDoll.GetComponent<Doll>().dollSO.testResults;
 
         if (paperIns != null)

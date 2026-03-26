@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 43b6df927294f8143892387990284e45
+guid: 100ab01443452d24f8d8fa304c2ceb58
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -8,27 +8,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Base
-    second: {fileID: 2100000, guid: f72837bfb87bec6489f6c43e3b973a65, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Eye
-    second: {fileID: 2100000, guid: c4b4303b666ef1e4089626657f511115, type: 2}
+    second: {fileID: 2100000, guid: 978f5221db7398c4788c10c632e77473, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hair
-    second: {fileID: 2100000, guid: 2d159ac855f0f604782d8e32c47114c6, type: 2}
+    second: {fileID: 2100000, guid: a7f8658d785a3ac40bb6ff694013ed5a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: darkShirt
-    second: {fileID: 2100000, guid: c5d68b071236c4a4d85625dc22d633b6, type: 2}
+      name: Shirt
+    second: {fileID: 2100000, guid: 783195ac748f2164ca865425af8db57f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lightShirt
-    second: {fileID: 2100000, guid: 0a82cc6f38c0350448bb85a3dcefad77, type: 2}
+      name: WhiteEye
+    second: {fileID: 2100000, guid: d00e17f142eb4f646a834b6c152bbdff, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

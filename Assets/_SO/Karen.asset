@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528ecde27feefd74eb359b784c14f552, type: 3}
+  m_Name: Karen
+  m_EditorClassIdentifier: Assembly-CSharp::DollConfig
+  dollName: Karen
+  dollOwner: Cyan Stewart, 10 y.o., female, deceased
+  dollStory: Karen is a bride doll given to Cyan at the age of 9. Unlike typical
+    imaginary conversations children have with their toys, Cyan would engage in responsive
+    dialogues with Karen. Not only would Karen 'reply' to Cyan, but she would also
+    occasionally tell Cyan what to do. At one point, Karen reportedly asked Cyan
+    to play on their apartment's balcony. While playing dangerously close to the
+    edge, Cyan fell eight stories down.
+  dollReason: Karen harbors a spirit that lacks any means of physical contact. It
+    appears to be a weak spirit trapped inside the doll. Cyan's death does not correspond
+    with the doll's actions, as the doll is incapable of causing harm or communicating
+    with anyone. It seems that Cyan's death was simply a tragic accident. However,
+    the doll is considered dangerous due to the spirit it harbors, which requires
+    further investigation.
+  dollAvatar: {fileID: 529279840, guid: 92c7a97e4c3a191449fb467317380964, type: 3}
+  dollPicure: {fileID: 21300000, guid: 8f3e5d48ff053df41a92622b6667d2ea, type: 3}
+  dollStatus: 2
+  testResults: 0100000001000000020000000200000001000000

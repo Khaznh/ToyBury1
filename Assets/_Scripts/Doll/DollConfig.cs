@@ -18,5 +18,6 @@ public class DollConfig : ScriptableObject
 public enum DollStatus
 {
     Unsafe,
-    Safe
+    Safe,
+    Both
 }

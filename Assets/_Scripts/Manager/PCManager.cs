@@ -118,6 +118,7 @@ public class PCManager : Singleton<PCManager>
         testContent.SetActive(false);
         helpContent.SetActive(false);
         errorAllContent.SetActive(false);
+        dollInfoContent.SetActive(false);
     }
 
     public void ShowReportScreen()

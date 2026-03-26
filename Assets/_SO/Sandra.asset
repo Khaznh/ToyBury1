@@ -18,8 +18,12 @@ MonoBehaviour:
     where Ingrid has tragically drowned. Despite Ingrid carrying Sandra everywhere,
     the doll was found tossed next to the lake. It was never discovered as to why
     Ingrid commited suicide, or if it even was a suicide.
-  dollReason: 
-  dollAvatar: {fileID: 0}
-  dollPicure: {fileID: 0}
+  dollReason: There was no evidence to suggest that the doll was possessed. Further
+    investigation into Ingrid's death revealed that she had gone swimming alone in
+    the lake, carefully setting Sandra aside to keep her from getting wet. Tragically,
+    Ingrid swam too far out and lacked the strength to make it back to shore, leading
+    to her drowning.
+  dollAvatar: {fileID: 21300000, guid: e4d05e4bf1f613e4c9f974dea621a723, type: 3}
+  dollPicure: {fileID: 21300000, guid: e581f94aef898d7448f2e03f4151a944, type: 3}
   dollStatus: 1
   testResults: 0100000001000000010000000100000001000000
