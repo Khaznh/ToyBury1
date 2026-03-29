@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528ecde27feefd74eb359b784c14f552, type: 3}
+  m_Name: Andy
+  m_EditorClassIdentifier: Assembly-CSharp::DollConfig
+  dollName: Andy
+  dollOwner: Devin Stokes, 8 y.o., male, alive
+  dollStory: "Devin Stokes created Andy during arts and crafts with the help of his
+    teacher, and it quickly became his favorite toy. Ever since Devin brought the
+    doll home, the Stokes family began hearing strange noises at night. At one point,
+    Devin's father found the doll placed in various locations\u2014some of which
+    were too high for young Devin to reach, or even locked away. Though there had
+    been no overtly threatening behavior from the doll, the family decided to return
+    it to the school. However, the doll mysteriously reappeared in Devin's room overnight.
+    Even more unsettling, the doll had somehow been placed\u2014or had entered\u2014Devin's
+    mouth while he slept, nearly choking him. It seems the doll is most likely going
+    to move again."
+  dollReason: 
+  dollAvatar: {fileID: 0}
+  dollPicure: {fileID: 0}
+  dollStatus: 0
+  dollStab: {fileID: 8300000, guid: b746c76d08eff424caefab86f869a8a8, type: 3}
+  dollCallName: {fileID: 0}
+  testResults: 0000000000000000000000000000000000000000

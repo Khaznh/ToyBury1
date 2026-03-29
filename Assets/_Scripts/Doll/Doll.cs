@@ -5,6 +5,19 @@ public class Doll : CanPickUpItem
     public DollConfig dollSO;
     public DollTestStatus dollTestStatus;
 
+    public AudioEventSO sfxChanel;
+
+    private AudioSource dollAudioSource;
+
+    private void Awake()
+    {
+        dollAudioSource = GetComponentInChildren<AudioSource>();
+        if (dollAudioSource == null)
+        {
+            Debug.LogError("No audio source found in children of " + gameObject.name);
+        }
+    }
+
     public virtual void InteractWithDoll(InteractableType type)
     {
         switch (type)
@@ -31,7 +44,7 @@ public class Doll : CanPickUpItem
 
     protected virtual void InteractWithScissor()
     {
-
+        sfxChanel.RaiseEvent(dollSO.dollStab, dollAudioSource);
     }
 
     protected virtual void InteractWithTempuration()

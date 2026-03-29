@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528ecde27feefd74eb359b784c14f552, type: 3}
+  m_Name: Clawdia
+  m_EditorClassIdentifier: Assembly-CSharp::DollConfig
+  dollName: Clawdia
+  dollOwner: Payton High, 7 y.o., female, alive
+  dollStory: "Payton bought Clawdia at a shopping mall with her mother. The doll
+    has a sound effect that plays when it is pushed too hard. Therefore, during the
+    physical discomfort test, ignore the doll\u2019s meowing. Payton\u2019s parents
+    reported seeing the doll move rapidly around Payton\u2019s room \u2014 a behavior
+    that is certainly not part of the doll\u2019s design. Although Clawdia has never
+    harmed anyone, the parents remain concerned."
+  dollReason: Clawdia harbors a spirit that appears to be playful, with no intention
+    of causing harm. However, playful or not, spirits within these dolls are typically
+    destroyed. Neutral dolls can be placed in either box if it is determined that
+    the doll is truly safe to be returned to its owner.
+  dollAvatar: {fileID: 0}
+  dollPicure: {fileID: 0}
+  dollStatus: 2
+  dollStab: {fileID: 8300000, guid: b746c76d08eff424caefab86f869a8a8, type: 3}
+  dollCallName: {fileID: 8300000, guid: bd426a6a4b8bf344aa55f5b8355617c9, type: 3}
+  testResults: 0100000002000000010000000200000001000000

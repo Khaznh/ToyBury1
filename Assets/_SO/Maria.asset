@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528ecde27feefd74eb359b784c14f552, type: 3}
+  m_Name: Maria
+  m_EditorClassIdentifier: Assembly-CSharp::DollConfig
+  dollName: Maria
+  dollOwner: Claire Green, 11 y.o., female, alive
+  dollStory: "Maria was considered an ordinary doll, until Claire noticed something
+    strange\u2014whenever she blinked, the doll would disappear. Eventually, the
+    doll was found near the Green family residence, carefully placed in a basket,
+    almost as if it were a baby. Assuming the doll was simply a gift from a neighbor,
+    the family decided to bring it inside."
+  dollReason: "Maria harbors a spirit that allows her to move at completely unnatural
+    speeds. In the blink of an eye, the doll will shift positions, but this seems
+    to be her only act. No reports have indicated that the doll has caused any harm,
+    for this, the doll's marked as neutral. However, every spirit that does not show
+    human empathy still should be destroyed. It was later discovered that the person
+    who left Maria in front of the Green household, placed gently in a basket, was
+    none other than Claire's grandmother\u2014acting with no ill intentions."
+  dollAvatar: {fileID: 0}
+  dollPicure: {fileID: 0}
+  dollStatus: 2
+  dollStab: {fileID: 8300000, guid: b746c76d08eff424caefab86f869a8a8, type: 3}
+  dollCallName: {fileID: 0}
+  testResults: 0100000002000000010000000200000001000000

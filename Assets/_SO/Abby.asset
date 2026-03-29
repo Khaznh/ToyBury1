@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528ecde27feefd74eb359b784c14f552, type: 3}
+  m_Name: Abby
+  m_EditorClassIdentifier: Assembly-CSharp::DollConfig
+  dollName: Abby
+  dollOwner: Jenna Wonder, 18 y.o., female, alive
+  dollStory: "Jenna was diagnosed with Antisocial Personality Disorder (ASPD). In
+    addition to exhibiting hostile behavior toward her classmates, she also tortured
+    and disfigured her doll\u2014ripping out its eye and hair, burning it with a
+    blowtorch, and throwing it around. Despite her parents throwing the doll away,
+    it mysteriously returned to Jenna's room. On one occasion, she even buried it,
+    yet it reappeared without any signs of disturbance at the burial site or dirt
+    on its surface. However, the doll stopped returning after Jenna was sent to prison
+    for attacking a boy at her high school with a knife, leaving him with a scar
+    across his arm. Since then, the doll has remained motionless."
+  dollReason: "Abby harbors a neutral spirit. She developed a desire to help Jenna
+    with her struggles, although she didn't fully understand where Jenna's problems
+    were coming from. Believing that allowing Jenna to release her frustrations and
+    anger on her would help, Abby endured the pain\u2014unaware that this spirit
+    could actually feel it. Abby tried to reach out to Jenna, but Jenna was too unstable,
+    almost like a rabid animal. The boy Jenna stabbed has since recovered, and Jenna
+    has been transferred from prison to a psychiatric ward, where she is receiving
+    treatment for her severe case of ASPD. Abby has shown herself to be a kind spirit
+    who simply couldn't help her best friend with a problem far more complex than
+    she anticipated."
+  dollAvatar: {fileID: 0}
+  dollPicure: {fileID: 0}
+  dollStatus: 0
+  dollStab: {fileID: 8300000, guid: b746c76d08eff424caefab86f869a8a8, type: 3}
+  dollCallName: {fileID: 0}
+  testResults: 0100000001000000010000000100000001000000

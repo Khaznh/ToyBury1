@@ -3269,7 +3269,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 119
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -11478,8 +11478,7 @@ MonoBehaviour:
   checkTranForSafe: {fileID: 861484321}
   checkTranForUnSafe: {fileID: 265033150}
   dollsToCheck:
-  - {fileID: 3377372047776247574, guid: 40d724c227d078c44a11db0a94d8af75, type: 3}
-  - {fileID: 7359273439262421533, guid: ff954db059144374b8be5877be170f15, type: 3}
+  - {fileID: 4017413477536748422, guid: f57f4e9739f3e384986f548a8053d44d, type: 3}
   dollsHasDone: []
   currentDoll: {fileID: 0}
   spawnPointForDoll: {fileID: 326718457}
@@ -15034,6 +15033,10 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 4218172411263395121, guid: 00f8b36c9389ae74d8b8e311316950fb, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 5843309334146738361, guid: 00f8b36c9389ae74d8b8e311316950fb, type: 3}
       propertyPath: m_Name
       value: Camera
@@ -15064,7 +15067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7660385283286896458, guid: 00f8b36c9389ae74d8b8e311316950fb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7700607655421136529, guid: 00f8b36c9389ae74d8b8e311316950fb, type: 3}
       propertyPath: cameraCanva

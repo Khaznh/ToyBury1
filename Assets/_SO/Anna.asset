@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528ecde27feefd74eb359b784c14f552, type: 3}
+  m_Name: Anna
+  m_EditorClassIdentifier: Assembly-CSharp::DollConfig
+  dollName: Anna
+  dollOwner: Wendy Kobayashi, 11 y.o., female, deceased
+  dollStory: Wendy always loved playing with Anna. One night, when Wendy's parents
+    weren't home, she was left alone. Tragically, when her parents returned, they
+    found Wendy had bled to death from a head wound caused by one of her other toys.
+    The lights weren't working, and her room was in complete disarray, with toys
+    scattered everywhere. According to the police investigation, the ceiling light,
+    Wendy's lamp, and her phone's flashlight all stopped working at around the same
+    time. Since it was already dark outside, her room was left in pitch-black darkness.
+    It's possible that Wendy became frightened and tried to escape but tripped and
+    fell on a sharp object. However, the cause of the sudden blackout remains unknown.
+  dollReason: Anna harbors a dangerous spirit that is sensitive to light. It was
+    confirmed that she was the cause of the blackout within a 30-yard radius. The
+    scattered toys were merely the result of Wendy's untidiness, which ultimately
+    led to her tripping over them in a panic and falling onto a sharp wooden tree
+    sculpture. Wendy died from blood loss 42 minutes later. Her parents discovered
+    her body two hours later when they returned from their anniversary date. The
+    doll cannot be trusted with children anymore.
+  dollAvatar: {fileID: -1773933378, guid: 3462d5d01d0c1db46b50c8dd11ce3f1a, type: 3}
+  dollPicure: {fileID: 0}
+  dollStatus: 0
+  dollStab: {fileID: 8300000, guid: b746c76d08eff424caefab86f869a8a8, type: 3}
+  dollCallName: {fileID: 0}
+  testResults: 0200000002000000010000000200000001000000

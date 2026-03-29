@@ -11,6 +11,8 @@ public class DollConfig : ScriptableObject
     public Sprite dollAvatar;
     public Sprite dollPicure;
     public DollStatus dollStatus;
+    public AudioClip dollStab;
+    public AudioClip dollCallName;
 
     public TestResult[] testResults = new TestResult[5];
 }
