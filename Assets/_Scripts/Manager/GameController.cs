@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class GameController : Singleton<GameController>
 {
+    [Header("Door")]
+    public bool mainDoorOpen = false;
+
     [Header("Result")]
     public TestResult[] dollTestResult;
     public TestResult[] playerResult;

@@ -35,6 +35,8 @@ public class Anna : Doll
         base.InteractWithCallName();
 
         GameController.Instance.isCallName = true;
+
+        Debug.Log("Anna: Black out");
     }
 
     protected override void InteractWithMusic()
@@ -42,6 +44,7 @@ public class Anna : Doll
         base.InteractWithMusic();
 
         GameController.Instance.isInAudioTest = true;
+        Debug.Log("Anna: Black out");
     }
 
     public override void Interact()

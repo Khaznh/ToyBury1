@@ -66,6 +66,13 @@ public class Doll : CanPickUpItem
     {
 
     }
+
+    public override void PickUpItem(GameObject itemToPick)
+    {
+        base.PickUpItem(itemToPick);
+
+        itemToPick.transform.localRotation = Quaternion.Euler(new Vector3(0, 180, 0));
+    }
 }
 
 [System.Serializable]

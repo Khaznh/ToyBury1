@@ -2,13 +2,21 @@ using UnityEngine;
 
 public class Maria : Doll
 {
+    private Transform spawnPointTrans;
+
+    private void Awake()
+    {
+        spawnPointTrans = GameObject.FindWithTag("SpawnPoint").transform;
+    }
+
     protected override void InteractWithTempuration()
     {
         base.InteractWithTempuration();
 
         GameController.Instance.isTempuration = true;
 
-        float temp = Random.Range(15f, 22f);
+
+        float temp = Random.Range(-15f, -3f);
         temp = Mathf.Round(temp * 10f) / 10f;
 
         TempScreen.Instance.ShowTemp(temp);
@@ -35,6 +43,18 @@ public class Maria : Doll
         base.InteractWithCallName();
 
         GameController.Instance.isCallName = true;
+
+        transform.SetParent(null);
+
+        if (GameController.Instance.mainDoorOpen)
+        {
+            transform.position = spawnPointTrans.GetChild(0).position;
+            transform.rotation = spawnPointTrans.GetChild(0).rotation;
+        } else
+        {
+            transform.position = spawnPointTrans.GetChild(1).position;
+            transform.rotation = spawnPointTrans.GetChild(1).rotation;
+        }
     }
 
     protected override void InteractWithMusic()

@@ -20,10 +20,10 @@ public class CanPickUpItem : Item
         Vector2 throwDir = Camera.main.transform.forward + playerController.forceZAxis * Vector3.forward;
         throwDir = throwDir.normalized;
 
-        itemToThrow.GetComponent<Rigidbody>().AddForce(throwDir * playerController.throwForce, ForceMode.Impulse);
+        itemToThrow.GetComponent<Rigidbody>().AddForce(playerController.throwForce * throwDir, ForceMode.Impulse);
     }
 
-    public void PickUpItem(GameObject itemToPick)
+    public virtual void PickUpItem(GameObject itemToPick)
     {
         itemToPick.transform.SetParent(playerController.hand.transform);
 

@@ -116,6 +116,7 @@ MonoBehaviour:
     isTestCorrect: 0
     isTypeCorrect: 0
   sfxChanel: {fileID: 11400000, guid: d1f339a1939ad1c40b57c156acd6e332, type: 2}
+  jumpForce: 20
 --- !u!1 &5940848621153630634
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,19 +280,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c46096734eb519439d3a021bee781b6, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c46096734eb519439d3a021bee781b6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.5
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c46096734eb519439d3a021bee781b6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c46096734eb519439d3a021bee781b6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.5
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c46096734eb519439d3a021bee781b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -299,7 +300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c46096734eb519439d3a021bee781b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c46096734eb519439d3a021bee781b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
