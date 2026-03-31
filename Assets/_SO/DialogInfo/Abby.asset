@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ca5fcb590a3c148a70877faa6b7adc, type: 3}
+  m_Name: Abby
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
+  dialogueLine:
+  - nodeID: Abby_1
+    speakerName: Abby
+    text: Please! No more!
+    userChoice: []
+  - nodeID: Abby_2
+    speakerName: Abby
+    text: I couldn't fix her! I couldn't.
+    userChoice: []
+  - nodeID: Abby_3
+    speakerName: Abby
+    text: I tried to fix her, instead she has broken me, too!
+    userChoice: []
+  - nodeID: Abby_4
+    speakerName: Abby
+    text: Now look at me, I'm a monster!
+    userChoice: []
+  - nodeID: Abby_5
+    speakerName: Abby
+    text: Please...  I beg of you, don't destroy me!
+    userChoice: []

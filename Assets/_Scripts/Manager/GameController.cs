@@ -104,6 +104,8 @@ public class GameController : Singleton<GameController>
             }
         }
 
+        // Andy
+
         if (currentDoll.GetComponent<Doll>().dollSO.dollStatus == playerDesition || currentDoll.GetComponent<Doll>().dollSO.dollStatus ==  DollStatus.Both)
         {
             currentDoll.GetComponent<Doll>().dollTestStatus.isTypeCorrect = true;

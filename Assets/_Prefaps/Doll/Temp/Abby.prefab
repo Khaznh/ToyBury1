@@ -245,6 +245,7 @@ MonoBehaviour:
     isTestCorrect: 0
     isTypeCorrect: 0
   sfxChanel: {fileID: 11400000, guid: d1f339a1939ad1c40b57c156acd6e332, type: 2}
+  dialogueInfo: {fileID: 11400000, guid: 4f354e7e98907c8438e980ceff6798f6, type: 2}
 --- !u!1001 &5438812965099284627
 PrefabInstance:
   m_ObjectHideFlags: 0

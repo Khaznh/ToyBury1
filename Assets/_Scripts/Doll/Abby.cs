@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Abby : Doll
 {
+    [SerializeField] private DialogueSO dialogueInfo;
+
     protected override void InteractWithTempuration()
     {
         base.InteractWithTempuration();
@@ -20,7 +22,9 @@ public class Abby : Doll
 
         GameController.Instance.isScissor = true;
 
+        // Jump out the chair
 
+        DialogueManager.Instance.StartDialogue(dialogueInfo);
     }
 
     protected override void InteractWithCamera()
