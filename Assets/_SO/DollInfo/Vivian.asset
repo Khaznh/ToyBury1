@@ -26,8 +26,8 @@ MonoBehaviour:
     only one to see the doll move, couldn't tell anyone about it. The doll proceeded
     to strangle the mother until she died from lack of oxygen. The doll is to be
     destroyed immediately, as it has already caused the death of a human being.
-  dollAvatar: {fileID: 0}
-  dollPicure: {fileID: 0}
+  dollAvatar: {fileID: 21300000, guid: 4175b1cdf4870174baa4764bf43e620e, type: 3}
+  dollPicure: {fileID: 21300000, guid: 3089a0953b1b2554a815256aeb5809b7, type: 3}
   dollStatus: 1
   dollStab: {fileID: 8300000, guid: b746c76d08eff424caefab86f869a8a8, type: 3}
   dollCallName: {fileID: 0}

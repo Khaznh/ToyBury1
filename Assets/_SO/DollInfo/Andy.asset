@@ -24,10 +24,14 @@ MonoBehaviour:
     Even more unsettling, the doll had somehow been placed\u2014or had entered\u2014Devin's
     mouth while he slept, nearly choking him. It seems the doll is most likely going
     to move again."
-  dollReason: 
-  dollAvatar: {fileID: 0}
-  dollPicure: {fileID: 0}
+  dollReason: "Andy harbors a mischievous spirit, one that likely only has the ability
+    to move when its surroundings are obstructed from view. Beyond that, the spirit
+    seems to form attachments, as evidenced by the way it plotted revenge when it
+    was taken away from Devin\u2014almost choking him in the process. Because of
+    this, the spirit is considered dangerous, and the doll has been destroyed."
+  dollAvatar: {fileID: 21300000, guid: 51a521f607971ce489484c320c612bd8, type: 3}
+  dollPicure: {fileID: 21300000, guid: b8775e81ac4f9334794c03926f003ac5, type: 3}
   dollStatus: 0
   dollStab: {fileID: 8300000, guid: b746c76d08eff424caefab86f869a8a8, type: 3}
   dollCallName: {fileID: 0}
-  testResults: 0000000000000000000000000000000000000000
+  testResults: 0100000001000000010000000100000001000000

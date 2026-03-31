@@ -40,7 +40,7 @@ public class TriggerItem : Item
                 GameController.Instance.SubmitDoll(DollStatus.Safe);
             } else if (GameController.Instance.checkTranForUnSafe.childCount > 0)
             {
-                GameController.Instance.SubmitDoll(DollStatus.Safe);
+                GameController.Instance.SubmitDoll(DollStatus.Unsafe);
             }
         }
 

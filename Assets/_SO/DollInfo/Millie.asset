@@ -30,7 +30,7 @@ MonoBehaviour:
     Gregory was no longer allowed to see Danna, whom he had once described as his
     only source of happiness."
   dollAvatar: {fileID: -117682030, guid: 2f66b5e3ecc2afc45bad684bf5cb076d, type: 3}
-  dollPicure: {fileID: 0}
+  dollPicure: {fileID: 21300000, guid: 1b4911ae53343d24cbea41c7303f5cd6, type: 3}
   dollStatus: 1
   dollStab: {fileID: 8300000, guid: b746c76d08eff424caefab86f869a8a8, type: 3}
   dollCallName: {fileID: 0}

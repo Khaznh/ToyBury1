@@ -24,8 +24,8 @@ MonoBehaviour:
     of causing harm. However, playful or not, spirits within these dolls are typically
     destroyed. Neutral dolls can be placed in either box if it is determined that
     the doll is truly safe to be returned to its owner.
-  dollAvatar: {fileID: 0}
-  dollPicure: {fileID: 0}
+  dollAvatar: {fileID: 21300000, guid: 14d84713f93627942ba8d08138d4b07c, type: 3}
+  dollPicure: {fileID: 21300000, guid: 05e82de06201a694686582671d9bc478, type: 3}
   dollStatus: 2
   dollStab: {fileID: 8300000, guid: bd426a6a4b8bf344aa55f5b8355617c9, type: 3}
   dollCallName: {fileID: 0}

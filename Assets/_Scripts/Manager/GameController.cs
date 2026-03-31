@@ -57,6 +57,9 @@ public class GameController : Singleton<GameController>
     public Sprite safeImgSource;
     public Sprite unsafeImgSource;
 
+    private int andyTestCount = 0;
+    private int andyEscapeMaxCount = 2;
+
     //For condition
     public void ResetCondition()
     {
@@ -105,6 +108,16 @@ public class GameController : Singleton<GameController>
         }
 
         // Andy
+        if (currentDoll.GetComponent<Doll>().dollSO.dollName == "Andy" && playerDesition == DollStatus.Unsafe)
+        {
+            andyTestCount++;
+            if (andyTestCount < andyEscapeMaxCount)
+            {
+                ((Andy)currentDoll.GetComponent<Doll>()).Tele();
+                Debug.Log("Andy escaped! try again.");
+                return;
+            }
+        }
 
         if (currentDoll.GetComponent<Doll>().dollSO.dollStatus == playerDesition || currentDoll.GetComponent<Doll>().dollSO.dollStatus ==  DollStatus.Both)
         {

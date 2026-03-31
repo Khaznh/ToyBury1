@@ -2,6 +2,15 @@ using UnityEngine;
 
 public class Andy : Doll
 {
+    private Transform teleTransform;
+    private int teleCount = 0;
+
+    private void Awake()
+    {
+        teleTransform = GameObject.FindWithTag("SpawnAndy").transform;
+        Tele();
+    }
+
     protected override void InteractWithTempuration()
     {
         base.InteractWithTempuration();
@@ -57,5 +66,13 @@ public class Andy : Doll
     public override void OnExitItem()
     {
         ThrowAwayItem(this.gameObject);
+    }
+
+    public void Tele()
+    {
+        transform.GetComponent<BoxCollider>().isTrigger = false;
+        transform.position = teleTransform.GetChild(teleCount).position;
+
+        teleCount++;
     }
 }

@@ -8,7 +8,7 @@ public class Anna : Doll
 
         GameController.Instance.isTempuration = true;
 
-        float temp = Random.Range(15f, 22f);
+        float temp = Random.Range(-20f, -5f);
         temp = Mathf.Round(temp * 10f) / 10f;
 
         TempScreen.Instance.ShowTemp(temp);
