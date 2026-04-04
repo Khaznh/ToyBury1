@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ca5fcb590a3c148a70877faa6b7adc, type: 3}
+  m_Name: EndGameSO
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
+  dialogueLine:
+  - nodeID: End_1
+    speakerName: Boss
+    text: Exceptional... truly. Eight out of nine parts completed. We are so close
+      now, aren't we?
+    userChoice: []
+  - nodeID: End_2
+    speakerName: Boss
+    text: Just one more
+    userChoice: []
+  - nodeID: End_3
+    speakerName: Boss
+    text: just one final interaction
+    userChoice: []
+  - nodeID: End_4
+    speakerName: Boss
+    text: and our masterpiece will finally be whole.
+    userChoice: []
+  - nodeID: End_5
+    speakerName: Boss
+    text: I hope you realize how
+    userChoice: []
+  - nodeID: End_6
+    speakerName: Boss
+    text: vital you are to this process. You aren't just an assistant.
+    userChoice: []
+  - nodeID: End_7
+    speakerName: Boss
+    text: It is your specific... resonance... that brings them to life. You are the
+      only constant in this entire collection. Without you, they are just... plastic
+      and dust.
+    userChoice: []
+  - nodeID: End_8
+    speakerName: Boss
+    text: "It\u2019s a milestone worth celebrating, don't you think? For this final
+      test let me set the mood."
+    userChoice: []
+  - nodeID: End_9
+    speakerName: Boss
+    text: There... much better. Let the music fill the silence while we finish what
+      we started. I want this moment to be... truly memorable. test let me set the
+      mood.
+    userChoice: []

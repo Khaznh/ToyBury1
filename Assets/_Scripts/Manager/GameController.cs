@@ -1,6 +1,8 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
 using UnityEngine.UI;
 
 public class GameController : Singleton<GameController>
@@ -59,6 +61,8 @@ public class GameController : Singleton<GameController>
 
     private int andyTestCount = 0;
     private int andyEscapeMaxCount = 2;
+
+    [SerializeField] private DialogueSO endGameDialogue;
 
     //For condition
     public void ResetCondition()
@@ -119,7 +123,7 @@ public class GameController : Singleton<GameController>
             }
         }
 
-        if (currentDoll.GetComponent<Doll>().dollSO.dollStatus == playerDesition || currentDoll.GetComponent<Doll>().dollSO.dollStatus ==  DollStatus.Both)
+        if (currentDoll.GetComponent<Doll>().dollSO.dollStatus == playerDesition || currentDoll.GetComponent<Doll>().dollSO.dollStatus == DollStatus.Both)
         {
             currentDoll.GetComponent<Doll>().dollTestStatus.isTypeCorrect = true;
         }
@@ -131,10 +135,17 @@ public class GameController : Singleton<GameController>
         currentDoll.GetComponent<Doll>().dollTestStatus.isTestCorrect = IsPlayerTestCorrect();
         currentDoll.transform.SetParent(null);
         currentDoll.transform.position = new Vector3(22.332f, 0.317f, 3.03f);
-
+        ResetCondition();
         dollsHasDone.Add(currentDoll);
         dollsToCheck.RemoveAt(0);
         currentDoll = null;
+
+        //Sep bao
+        if (dollsToCheck.Count == 0)
+        {
+            DialogueManager.Instance.StartDialogue(endGameDialogue);
+            return;
+        }
     }
 
     public bool CanSubmitDoll()
@@ -157,9 +168,13 @@ public class GameController : Singleton<GameController>
             return;
         }
 
+        //Chay cutsceen
         if (dollsToCheck.Count == 0)
         {
-            Debug.Log("No more doll to check");
+            Debug.Log("End");
+            SetPlayerControl(false);
+            SetPlayerCursor(true);
+            EndGameCanvas.Instance.ShowEndGame();
             return;
         }
 

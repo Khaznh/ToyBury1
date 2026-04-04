@@ -53,8 +53,15 @@ public class DialogueManager : Singleton<DialogueManager>
     private void GoToNextNode()
     {
         currentIndex++;
+
         if (currentIndex < currentDialogue.dialogueLine.Count)
         {
+            if (currentDialogue.dialogueLine[currentIndex].nodeID == "End_8")
+            {
+                Debug.Log("Phat Nhac");
+
+            }
+
             DialogueCanvas.Instance.SetDialogue(currentDialogue.dialogueLine[currentIndex]);
         } else
         {
