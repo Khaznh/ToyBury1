@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 328520194718143462}
+  - component: {fileID: 1175735609800124270}
   m_Layer: 0
   m_Name: LightInLab
   m_TagString: Untagged
@@ -33,6 +34,21 @@ Transform:
   - {fileID: 1889524391851276779}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1175735609800124270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5404527422427269719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d34a32f8998a0409c0584b10cfe3da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CellingLight
+  _light: {fileID: 3558146913016495053}
+  offMat: {fileID: 2100000, guid: 1bc75f6ecb810bc48932f784ae3a7592, type: 2}
+  onMat: {fileID: 2100000, guid: f7062f49a092b5241b59943fe9bbf626, type: 2}
 --- !u!1 &6698797610797674405
 GameObject:
   m_ObjectHideFlags: 0
