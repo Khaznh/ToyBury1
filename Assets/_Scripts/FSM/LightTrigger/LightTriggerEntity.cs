@@ -7,6 +7,8 @@ public class LightTriggerEntity : Entity
     public Animator lightTriggerAnimator;
     public List<CellingLight> cellingLightList;
 
+    [SerializeField] private bool isNeedToTurnOn = false;
+
     private LightTriggerOffState offState;
     private LightTriggerOnState onState;
     private FSM fsm;
@@ -17,8 +19,14 @@ public class LightTriggerEntity : Entity
         fsm = new FSM();
         onState = new LightTriggerOnState(fsm, this);
         offState = new LightTriggerOffState(fsm, this);
-
-        fsm.Init(offState);
+        if (isNeedToTurnOn)
+        {
+            fsm.Init(onState);
+        }
+        else
+        {
+            fsm.Init(offState);
+        }
     }
 
     public void ChangeCurrentState()

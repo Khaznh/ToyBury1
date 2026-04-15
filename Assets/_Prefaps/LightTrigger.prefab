@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1894573258215327216}
   - component: {fileID: 7189530307122336530}
   - component: {fileID: 5130907346345176140}
-  - component: {fileID: 6370193062973961024}
-  - component: {fileID: 3430581272912687550}
+  - component: {fileID: 3715350150480077312}
+  - component: {fileID: 7052941339259201372}
   m_Layer: 0
   m_Name: LightTrigger
   m_TagString: InteractableObject
@@ -93,7 +93,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6370193062973961024
+--- !u!114 &3715350150480077312
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,7 +108,11 @@ MonoBehaviour:
   lightTriggerAnimator: {fileID: 0}
   cellingLightList:
   - {fileID: 0}
---- !u!114 &3430581272912687550
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &7052941339259201372
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948f7c3f059871e4d8e938be50aa80dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightTriggerItem
-  triggerEntity: {fileID: 6370193062973961024}
+  triggerEntity: {fileID: 3715350150480077312}
 --- !u!1001 &2655650321592573871
 PrefabInstance:
   m_ObjectHideFlags: 0
