@@ -19888,6 +19888,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 10247917627463921, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
+      propertyPath: m_Size.z
+      value: 0.21857588
+      objectReference: {fileID: 0}
+    - target: {fileID: 10247917627463921, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
+      propertyPath: m_Center.z
+      value: 0.17355122
+      objectReference: {fileID: 0}
     - target: {fileID: 528416381747952962, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.389
@@ -19956,8 +19964,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PC
       objectReference: {fileID: 0}
+    - target: {fileID: 5787795689925551046, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6171884548085385156, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171884548085385156, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9014438520007791284, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
