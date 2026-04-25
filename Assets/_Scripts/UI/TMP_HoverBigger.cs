@@ -49,6 +49,6 @@ public class TMP_HoverBigger : MonoBehaviour, IPointerEnterHandler, IPointerExit
                                 x => text.fontSize = x,
                                 targetSize,
                                 0.25f)
-                            .SetEase(Ease.OutQuad);
+                            .SetEase(Ease.OutQuad).SetUpdate(true);
     }
 }

@@ -8,6 +8,8 @@ public class FirstPersonLook : MonoBehaviour
     public float sensitivity = 2;
     public float smoothing = 1.5f;
 
+    [SerializeField] private SensitivitySlider sensitivitySlider;
+
     private Vector2 velocity;
     private Vector2 frameVelocity;
 
@@ -37,6 +39,7 @@ public class FirstPersonLook : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         sensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 0.5f);
+        sensitivitySlider.OnSensitivityChanged += () => sensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 0.5f);
     }
 
     void Update()
