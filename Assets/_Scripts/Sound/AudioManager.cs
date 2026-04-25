@@ -5,6 +5,8 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] private AudioEventSO sfxChannel;
     [SerializeField] private AudioEventSO backGround;
+    [SerializeField] private AudioEventSO uiChannel;
+    [SerializeField] private AudioEventSO masterChannel;
 
     [SerializeField] private AudioMixer mainMixer;
 
@@ -12,6 +14,8 @@ public class AudioManager : MonoBehaviour
     {
         sfxChannel.RaiseAudio += PlaySFX;
         backGround.RaiseAudio += PlayBG;
+        uiChannel.RaiseAudio += PlaySFX;
+        masterChannel.RaiseAudio += PlaySFX;
     }
 
     private void OnDisable()

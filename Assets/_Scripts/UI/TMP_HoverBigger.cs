@@ -11,9 +11,14 @@ public class TMP_HoverBigger : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     [SerializeField] private float hoverScale = 1.2f;
 
+    [SerializeField] private AudioClip hoverSound;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioEventSO uiChannel;
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         AnimateFontSize(_originalFontSize * hoverScale);
+        uiChannel.RaiseEvent(hoverSound, audioSource);
     }
 
     public void OnPointerExit(PointerEventData eventData)

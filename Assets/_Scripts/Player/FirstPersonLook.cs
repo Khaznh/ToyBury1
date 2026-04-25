@@ -36,6 +36,7 @@ public class FirstPersonLook : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        sensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 0.5f);
     }
 
     void Update()

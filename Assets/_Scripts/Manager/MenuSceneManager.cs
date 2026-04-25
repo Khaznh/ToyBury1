@@ -12,6 +12,10 @@ public class MenuSceneManager : Singleton<MenuSceneManager>
     [SerializeField] private GameObject mainPackage;
     [SerializeField] private GameObject optionPackage;
 
+    [SerializeField] private GameObject mainControlCanvas;
+    [SerializeField] private GameObject controlOptionCanvas;
+    [SerializeField] private GameObject audioOptionCanvas;
+
     public void QuitGame()
     {
         Application.Quit();
@@ -21,6 +25,22 @@ public class MenuSceneManager : Singleton<MenuSceneManager>
     {
         mainPackage.SetActive(false);
         optionPackage.SetActive(true);
+
+        mainControlCanvas.SetActive(true);
+        controlOptionCanvas.SetActive(false);
+        audioOptionCanvas.SetActive(false);
+    }
+
+    public void GoToAudioSetting()
+    {
+        mainControlCanvas.SetActive(false);
+        audioOptionCanvas.SetActive(true);
+    }
+
+    public void GoToControlSetting()
+    {
+        mainControlCanvas.SetActive(false);
+        controlOptionCanvas.SetActive(true);
     }
 
     public void GoToMain()
@@ -37,17 +57,19 @@ public class MenuSceneManager : Singleton<MenuSceneManager>
 
         Sequence se = DOTween.Sequence();
 
-        DOTween.To(() => mainCamera.Lens.FieldOfView,
-                       x => {
-                           var lens = mainCamera.Lens;
-                           lens.FieldOfView = x;
-                           mainCamera.Lens = lens;
-                       },
-                       0.1f, 0.75f).SetEase(Ease.InQuad);
+        se.Join(DOTween.To(() => mainCamera.Lens.FieldOfView,
+                    x => {
+                        var lens = mainCamera.Lens;
+                        lens.FieldOfView = x;
+                        mainCamera.Lens = lens;
+                    },
+                    0.1f, 0.75f).SetEase(Ease.InQuad));
 
-        hideOutImage.DOFade(1f, 0.5f)
-        .SetEase(Ease.InQuad)
-        .OnComplete(() =>
+        se.Join(hideOutImage.DOFade(1f, 0.5f).SetEase(Ease.InQuad));
+
+        se.AppendInterval(0.2f);
+
+        se.OnComplete(() =>
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
         });
