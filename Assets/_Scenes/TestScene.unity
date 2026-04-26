@@ -940,6 +940,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8658991116561046557, guid: e5d88d6f51de6e44d82b9fc14cc1a4ec, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 873aad0e6a4f8534dba8be4d69d5ae2a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7208,6 +7212,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1537636122166639926, guid: 71ed4b48eaa5ea74b958464be20df93e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 873aad0e6a4f8534dba8be4d69d5ae2a, type: 2}
     - target: {fileID: 2526281555410052118, guid: 71ed4b48eaa5ea74b958464be20df93e, type: 3}
       propertyPath: m_Size.y
       value: 0.6876284
@@ -24979,7 +24987,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1815490509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29221,6 +29229,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scissor
       objectReference: {fileID: 0}
+    - target: {fileID: 2994905155433618354, guid: e7fea11592f35404fb85093a833d0305, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ea48f27fd91794246a38ad186851bcfd, type: 2}
     - target: {fileID: 3177283299292684088, guid: e7fea11592f35404fb85093a833d0305, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.264
@@ -29353,7 +29365,11 @@ PrefabInstance:
     - target: {fileID: 5787795689925551046, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 658460404}
+    - target: {fileID: 5894015876237211642, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 54599561}
     - target: {fileID: 6171884548085385156, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -29640,6 +29656,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plashlight
       objectReference: {fileID: 0}
+    - target: {fileID: 5535449370227421943, guid: 04408d0d99075a54198dcdbb0eb499ae, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: -7805965318761107941, guid: 6040218226a710c4aa92e11dc1273d45, type: 3}
     - target: {fileID: 8463161503871675291, guid: 04408d0d99075a54198dcdbb0eb499ae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.35
@@ -29781,6 +29801,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3933475125673411139, guid: e1e5cedf4d0ca6c4ca43d72b53f22bd0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5780046135752389479, guid: 3f2007c166e10db4b810417ebad61030, type: 3}
     - target: {fileID: 4011276666703944532, guid: e1e5cedf4d0ca6c4ca43d72b53f22bd0, type: 3}
       propertyPath: m_Name
       value: Tempuration
@@ -30105,6 +30129,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1537636122166639926, guid: 71ed4b48eaa5ea74b958464be20df93e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 873aad0e6a4f8534dba8be4d69d5ae2a, type: 2}
     - target: {fileID: 3494063701601022128, guid: 71ed4b48eaa5ea74b958464be20df93e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.454
@@ -30352,6 +30380,10 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8658991116561046557, guid: e5d88d6f51de6e44d82b9fc14cc1a4ec, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 92977347386642436, guid: 9eeade9101e6c7c4dbe7fd5084030624, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
