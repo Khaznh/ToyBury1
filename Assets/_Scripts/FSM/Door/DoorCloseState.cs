@@ -11,6 +11,7 @@ public class DoorCloseState : State
         base.EnterState();
 
         ((DoorEntity)entity).animator.Play("DoorClose");
+        ((DoorEntity)entity).sfxChannel.RaiseEvent(((DoorEntity)entity).doorAudio, ((DoorEntity)entity).audioSource);
     }
 
     public override void UpdateLogic()

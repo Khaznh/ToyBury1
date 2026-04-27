@@ -35,6 +35,8 @@ public class Sandra : Doll
         base.InteractWithCallName();
 
         GameController.Instance.isCallName = true;
+
+
     }
 
     protected override void InteractWithMusic()

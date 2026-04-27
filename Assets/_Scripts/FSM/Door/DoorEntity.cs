@@ -4,6 +4,10 @@ public class DoorEntity : Entity
 {
     public Animator animator;
 
+    public AudioClip doorAudio;
+    public AudioEventSO sfxChannel;
+    public AudioSource audioSource;
+
     public DoorCloseIdle doorCloseIdle;
     public DoorOpenIdle doorOpenIdle;
     private DoorOpenState doorOpenState;

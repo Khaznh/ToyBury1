@@ -30,5 +30,5 @@ MonoBehaviour:
   dollPicure: {fileID: 21300000, guid: f05a7858881b67148bfa4e0048bf6a49, type: 3}
   dollStatus: 2
   dollStab: {fileID: 8300000, guid: b746c76d08eff424caefab86f869a8a8, type: 3}
-  dollCallName: {fileID: 0}
+  dollCallName: {fileID: 8300000, guid: ae91f3ca87b6a0b4e940dfa7c5c35c6f, type: 3}
   testResults: 0100000002000000010000000200000001000000

@@ -7,6 +7,10 @@ public class DoorLabEntity : Entity
     public DoorLabIdleClose doorLabIdleClose;
     public DoorLabIdleOpen doorLabIdleOpen;
 
+    public AudioClip doorLabSound;
+    public AudioEventSO sfxChannel;
+    public AudioSource audioSource;
+
     private FSM fsm;
     private DoorLabClose doorLabClose;
     private DoorLabOpen doorLabOpen;

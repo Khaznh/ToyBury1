@@ -9,6 +9,7 @@ public class DoorLabOpen : State
     public override void EnterState()
     {
         base.EnterState();
+        ((DoorLabEntity)entity).sfxChannel.RaiseEvent(((DoorLabEntity)entity).doorLabSound, ((DoorLabEntity)entity).audioSource);
         ((DoorLabEntity)entity).animator.Play("DoorLabOpen");
     }
 

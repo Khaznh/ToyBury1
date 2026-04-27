@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class TempurationItem : CanPickUpItem
 {
+    [SerializeField] private AudioClip tempAudio;
+    [SerializeField] private AudioEventSO sfxChannel;
+    [SerializeField] private AudioSource audioSource;
+
     public override void Start()
     {
         base.Start();
@@ -22,6 +26,8 @@ public class TempurationItem : CanPickUpItem
     public override void Use()
     {
         base.Use();
+
+        sfxChannel.RaiseEvent(tempAudio, audioSource);
 
         if (RaycastSource.Instance.currentObject == null || RaycastSource.Instance.currentObject.transform.GetComponentInChildren<Doll>() == null)
         {

@@ -10,8 +10,8 @@ public class LightTriggerOnState : State
     {
         base.EnterState();
         ((LightTriggerEntity)entity).lightTriggerAnimator.Play("LightTriggerOn");
-
-        foreach(var celling in ((LightTriggerEntity)entity).cellingLightList)
+        ((LightTriggerEntity)entity).sfxChannel.RaiseEvent(((LightTriggerEntity)entity).soundToOn, ((LightTriggerEntity)entity).audioSource);
+        foreach (var celling in ((LightTriggerEntity)entity).cellingLightList)
         {
             celling.TurnOn();
         }

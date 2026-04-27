@@ -9,7 +9,7 @@ public class DoorLabIdleClose : State
     public override void EnterState()
     {
         base.EnterState();
-
+        GameController.Instance.mainDoorOpen = false;
         ((DoorLabEntity)entity).animator.Play("DoorLabIdleClose");
     }
 }

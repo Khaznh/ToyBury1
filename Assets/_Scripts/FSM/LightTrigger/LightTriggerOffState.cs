@@ -10,7 +10,7 @@ public class LightTriggerOffState : State
     {
         base.EnterState();
         ((LightTriggerEntity)entity).lightTriggerAnimator.Play("LightTriggerOff");
-
+        ((LightTriggerEntity)entity).sfxChannel.RaiseEvent(((LightTriggerEntity)entity).soundToOff, ((LightTriggerEntity)entity).audioSource);
         foreach (var celling in ((LightTriggerEntity)entity).cellingLightList)
         {
             celling.TurnOff();

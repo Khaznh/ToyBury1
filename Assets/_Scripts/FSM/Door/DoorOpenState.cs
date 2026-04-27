@@ -10,6 +10,7 @@ public class DoorOpenState : State
     {
         base.EnterState();
         ((DoorEntity)entity).animator.Play("DoorOpen");
+        ((DoorEntity)entity).sfxChannel.RaiseEvent(((DoorEntity)entity).doorAudio, ((DoorEntity)entity).audioSource);
     }
 
     public override void UpdateLogic()

@@ -12,7 +12,7 @@ public class OpenPlaceState : PlaceState
     public override void EnterState()
     {
         base.EnterState();
-
+        ((PlaceEntity)entity).sfxChannel.RaiseEvent(((PlaceEntity)entity).holderAudio, ((PlaceEntity)entity).audioSource);
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         float currentTime = 0;
 

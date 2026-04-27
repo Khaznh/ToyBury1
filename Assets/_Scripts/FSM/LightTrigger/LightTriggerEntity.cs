@@ -9,6 +9,11 @@ public class LightTriggerEntity : Entity
 
     [SerializeField] private bool isNeedToTurnOn = false;
 
+    public AudioClip soundToOn;
+    public AudioClip soundToOff;
+    public AudioEventSO sfxChannel;
+    public AudioSource audioSource;
+
     private LightTriggerOffState offState;
     private LightTriggerOnState onState;
     private FSM fsm;

@@ -5,6 +5,11 @@ using UnityEngine.XR;
 public class FlashLightItem : CanPickUpItem
 {
     [SerializeField] private Light flashLight;
+
+    [SerializeField] private AudioClip flashLightAudio;
+    [SerializeField] private AudioEventSO sfxChannel;
+    [SerializeField] private AudioSource audioSource;
+
     private bool isUse = false;
 
     public override void Start()
@@ -33,6 +38,7 @@ public class FlashLightItem : CanPickUpItem
     public override void Use()
     {
         Debug.Log("Use Light");
+        sfxChannel.RaiseEvent(flashLightAudio, audioSource);
         isUse = !isUse;
         flashLight.enabled = isUse;
         AdjustRotation();

@@ -8,6 +8,10 @@ public class PlaceEntity : Entity
     public IdleOpenPlaceState idleOpenPlaceState;
     public IdleClosePlaceState idleClosePlaceState;
 
+    public AudioClip holderAudio;
+    public AudioEventSO sfxChannel;
+    public AudioSource audioSource;
+
     private FSM fsm;
 
     private void Awake()
