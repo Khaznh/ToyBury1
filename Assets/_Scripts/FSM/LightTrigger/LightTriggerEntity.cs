@@ -45,4 +45,12 @@ public class LightTriggerEntity : Entity
             fsm.ChangeState(offState);
         }
     }
+
+    public void ForceTurnOff()
+    {
+        if (fsm.currentState == onState)
+        {
+            fsm.ChangeState(offState);
+        }
+    }
 }

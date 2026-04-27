@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Anna : Doll
@@ -19,8 +20,6 @@ public class Anna : Doll
         base.InteractWithScissor();
 
         GameController.Instance.isScissor = true;
-
-
     }
 
     protected override void InteractWithCamera()
@@ -30,13 +29,40 @@ public class Anna : Doll
         GameController.Instance.isPhotoTaken = true;
     }
 
+    //protected override void InteractWithCallName()
+    //{
+    //    base.InteractWithCallName();
+
+    //    GameController.Instance.isCallName = true;
+
+    //    GameController.Instance.ForceToTurnOff();
+    //}
+
     protected override void InteractWithCallName()
     {
         base.InteractWithCallName();
 
         GameController.Instance.isCallName = true;
+        StartCoroutine(CallName());
+    }
 
-        Debug.Log("Anna: Black out");
+    private IEnumerator CallName()
+    {
+        GameController.Instance.targetCanva.SetActive(false);
+        FocusCanvas.Instance.ShowFocus();
+        GameController.Instance.SetPlayerControl(false);
+        yield return new WaitForSeconds(1.5f);
+
+        sfxChanel.RaiseEvent(dollSO.dollCallName, GameController.Instance.playerAudioSource);
+
+        yield return new WaitForSeconds(0.5f);
+
+        GameController.Instance.ForceToTurnOff();
+
+        yield return new WaitForSeconds(2f);
+        GameController.Instance.targetCanva.SetActive(false);
+        FocusCanvas.Instance.DisableFocus();
+        GameController.Instance.SetPlayerControl(true);
     }
 
     protected override void InteractWithMusic()
@@ -44,7 +70,7 @@ public class Anna : Doll
         base.InteractWithMusic();
 
         GameController.Instance.isInAudioTest = true;
-        Debug.Log("Anna: Black out");
+        GameController.Instance.ForceToTurnOff();
     }
 
     public override void Interact()

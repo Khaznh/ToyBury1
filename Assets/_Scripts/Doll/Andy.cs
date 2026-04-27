@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Andy : Doll
@@ -44,6 +45,22 @@ public class Andy : Doll
         base.InteractWithCallName();
 
         GameController.Instance.isCallName = true;
+        StartCoroutine(CallName());
+    }
+
+    private IEnumerator CallName()
+    {
+        GameController.Instance.targetCanva.SetActive(false);
+        FocusCanvas.Instance.ShowFocus();
+        GameController.Instance.SetPlayerControl(false);
+        yield return new WaitForSeconds(1.5f);
+
+        sfxChanel.RaiseEvent(dollSO.dollCallName, GameController.Instance.playerAudioSource);
+
+        yield return new WaitForSeconds(2.5f);
+        GameController.Instance.targetCanva.SetActive(false);
+        FocusCanvas.Instance.DisableFocus();
+        GameController.Instance.SetPlayerControl(true);
     }
 
     protected override void InteractWithMusic()

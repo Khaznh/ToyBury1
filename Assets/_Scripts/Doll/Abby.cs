@@ -1,8 +1,19 @@
+using System.Collections;
 using UnityEngine;
 
 public class Abby : Doll
 {
     [SerializeField] private DialogueSO dialogueInfo;
+    [SerializeField] private float jumpForce = 10f;
+
+    private Rigidbody rb;
+    private BoxCollider boxCollider;
+
+    private void OnEnable()
+    {
+        rb = GetComponent<Rigidbody>();
+        boxCollider = GetComponent<BoxCollider>();
+    }
 
     protected override void InteractWithTempuration()
     {
@@ -24,6 +35,15 @@ public class Abby : Doll
 
         // Jump out the chair
 
+
+        transform.SetParent(null);
+        rb.isKinematic = false;
+        boxCollider.isTrigger = false;
+
+        Vector3 dirVetor = new Vector3(0, 1f, 0);
+        rb.AddForce(dirVetor * jumpForce, ForceMode.Impulse);
+
+
         DialogueManager.Instance.StartDialogue(dialogueInfo);
     }
 
@@ -39,6 +59,22 @@ public class Abby : Doll
         base.InteractWithCallName();
 
         GameController.Instance.isCallName = true;
+        StartCoroutine(CallName());
+    }
+
+    private IEnumerator CallName()
+    {
+        GameController.Instance.targetCanva.SetActive(false);
+        FocusCanvas.Instance.ShowFocus();
+        GameController.Instance.SetPlayerControl(false);
+        yield return new WaitForSeconds(1.5f);
+
+        sfxChanel.RaiseEvent(dollSO.dollCallName, GameController.Instance.playerAudioSource);
+
+        yield return new WaitForSeconds(2.5f);
+        GameController.Instance.targetCanva.SetActive(false);
+        FocusCanvas.Instance.DisableFocus();
+        GameController.Instance.SetPlayerControl(true);
     }
 
     protected override void InteractWithMusic()

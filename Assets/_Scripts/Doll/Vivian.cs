@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Vivian : Doll
@@ -35,6 +37,22 @@ public class Vivian : Doll
         base.InteractWithCallName();
 
         GameController.Instance.isCallName = true;
+        StartCoroutine(CallName());
+    }
+
+    private IEnumerator CallName()
+    {
+        GameController.Instance.targetCanva.SetActive(false);
+        FocusCanvas.Instance.ShowFocus();
+        GameController.Instance.SetPlayerControl(false);
+        yield return new WaitForSeconds(1.5f);
+
+        sfxChanel.RaiseEvent(dollSO.dollCallName, GameController.Instance.playerAudioSource);
+
+        yield return new WaitForSeconds(2.5f);
+        GameController.Instance.targetCanva.SetActive(false);
+        FocusCanvas.Instance.DisableFocus();
+        GameController.Instance.SetPlayerControl(true);
     }
 
     protected override void InteractWithMusic()

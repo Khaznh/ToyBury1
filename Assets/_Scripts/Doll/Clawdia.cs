@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Clawdia : Doll
 {
@@ -7,7 +8,7 @@ public class Clawdia : Doll
     private Rigidbody rb;
     private BoxCollider boxCollider;
 
-    private void Awake()
+    private void OnEnable()
     {
         rb = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
@@ -39,18 +40,50 @@ public class Clawdia : Doll
         GameController.Instance.isPhotoTaken = true;
     }
 
+    //protected override void InteractWithCallName()
+    //{
+    //    base.InteractWithCallName();
+
+    //    GameController.Instance.isCallName = true;
+
+    //    transform.SetParent(null);
+    //    rb.isKinematic = false;
+    //    boxCollider.isTrigger = false;
+
+    //    Vector3 dirVetor = new Vector3(1f,0.3f,0);
+    //    rb.AddForce(dirVetor * jumpForce, ForceMode.Impulse);
+    //}
+
     protected override void InteractWithCallName()
     {
         base.InteractWithCallName();
 
         GameController.Instance.isCallName = true;
+        StartCoroutine(CallName());
+    }
+
+    private IEnumerator CallName()
+    {
+        GameController.Instance.targetCanva.SetActive(false);
+        FocusCanvas.Instance.ShowFocus();
+        GameController.Instance.SetPlayerControl(false);
+        yield return new WaitForSeconds(1.5f);
+
+        sfxChanel.RaiseEvent(dollSO.dollCallName, GameController.Instance.playerAudioSource);
+
+        yield return new WaitForSeconds(0.25f);
 
         transform.SetParent(null);
         rb.isKinematic = false;
         boxCollider.isTrigger = false;
 
-        Vector3 dirVetor = new Vector3(1f,0.3f,0);
+        Vector3 dirVetor = new Vector3(1f, 0.3f, 0);
         rb.AddForce(dirVetor * jumpForce, ForceMode.Impulse);
+
+        yield return new WaitForSeconds(2.25f);
+        GameController.Instance.targetCanva.SetActive(false);
+        FocusCanvas.Instance.DisableFocus();
+        GameController.Instance.SetPlayerControl(true);
     }
 
     protected override void InteractWithMusic()

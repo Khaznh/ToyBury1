@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Maria : Doll
@@ -38,11 +39,43 @@ public class Maria : Doll
         GameController.Instance.isPhotoTaken = true;
     }
 
+    //protected override void InteractWithCallName()
+    //{
+    //    base.InteractWithCallName();
+
+    //    GameController.Instance.isCallName = true;
+
+    //    transform.SetParent(null);
+
+    //    if (GameController.Instance.mainDoorOpen)
+    //    {
+    //        transform.position = spawnPointTrans.GetChild(0).position;
+    //        transform.rotation = spawnPointTrans.GetChild(0).rotation;
+    //    } else
+    //    {
+    //        transform.position = spawnPointTrans.GetChild(1).position;
+    //        transform.rotation = spawnPointTrans.GetChild(1).rotation;
+    //    }
+    //}
+
     protected override void InteractWithCallName()
     {
         base.InteractWithCallName();
 
         GameController.Instance.isCallName = true;
+        StartCoroutine(CallName());
+    }
+
+    private IEnumerator CallName()
+    {
+        GameController.Instance.targetCanva.SetActive(false);
+        FocusCanvas.Instance.ShowFocus();
+        GameController.Instance.SetPlayerControl(false);
+        yield return new WaitForSeconds(1.5f);
+
+        sfxChanel.RaiseEvent(dollSO.dollCallName, GameController.Instance.playerAudioSource);
+
+        yield return new WaitForSeconds(0.5f);
 
         transform.SetParent(null);
 
@@ -50,11 +83,17 @@ public class Maria : Doll
         {
             transform.position = spawnPointTrans.GetChild(0).position;
             transform.rotation = spawnPointTrans.GetChild(0).rotation;
-        } else
+        }
+        else
         {
             transform.position = spawnPointTrans.GetChild(1).position;
             transform.rotation = spawnPointTrans.GetChild(1).rotation;
         }
+
+        yield return new WaitForSeconds(2f);
+        GameController.Instance.targetCanva.SetActive(false);
+        FocusCanvas.Instance.DisableFocus();
+        GameController.Instance.SetPlayerControl(true);
     }
 
     protected override void InteractWithMusic()

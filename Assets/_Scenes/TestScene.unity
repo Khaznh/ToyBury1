@@ -2854,7 +2854,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &262392336
 RectTransform:
@@ -8560,6 +8560,135 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &660317987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 660317988}
+  - component: {fileID: 660317989}
+  m_Layer: 0
+  m_Name: SFXPlayerAudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &660317988
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660317987}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1915383209}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &660317989
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660317987}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 4649492471928313937, guid: 0fca6e30ac0f0df48ae635cc74125cc5, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &661627287
 GameObject:
   m_ObjectHideFlags: 0
@@ -17959,7 +18088,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1252863593
 RectTransform:
@@ -20740,6 +20869,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421654724}
   m_CullTransparentMesh: 1
+--- !u!114 &1427653561 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3715350150480077312, guid: fce5c1571f3a05c439ef2b6f5b3b500b, type: 3}
+  m_PrefabInstance: {fileID: 848725426}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4dd572a6a63544fb228aa65d513e62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LightTriggerEntity
 --- !u!1001 &1431115885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20876,6 +21016,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1867577413769959986, guid: fce5c1571f3a05c439ef2b6f5b3b500b, type: 3}
   m_PrefabInstance: {fileID: 2652266672911184590}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1438517573 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3715350150480077312, guid: fce5c1571f3a05c439ef2b6f5b3b500b, type: 3}
+  m_PrefabInstance: {fileID: 2652266672911184590}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4dd572a6a63544fb228aa65d513e62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LightTriggerEntity
 --- !u!1 &1447974353
 GameObject:
   m_ObjectHideFlags: 0
@@ -24092,6 +24243,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79e6eb3da67254c4ab8e77348e6182ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameController
+  lightTriggerEntities:
+  - {fileID: 1438517573}
+  - {fileID: 1766751109}
+  - {fileID: 1816370080}
+  - {fileID: 1427653561}
+  playerAudioSource: {fileID: 660317989}
   mainDoorOpen: 0
   dollTestResult: 
   playerResult: 
@@ -24107,7 +24264,7 @@ MonoBehaviour:
   checkTranForSafe: {fileID: 861484321}
   checkTranForUnSafe: {fileID: 265033150}
   dollsToCheck:
-  - {fileID: 1398745639858767806, guid: 24426d76e212c3b469e4812317280839, type: 3}
+  - {fileID: 8557733862508826976, guid: cdcacd6b62e372b4a84b9dfeb5f3d1d6, type: 3}
   dollsHasDone: []
   currentDoll: {fileID: 0}
   spawnPointForDoll: {fileID: 326718457}
@@ -25957,6 +26114,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1867577413769959986, guid: fce5c1571f3a05c439ef2b6f5b3b500b, type: 3}
   m_PrefabInstance: {fileID: 965562143}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1766751109 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3715350150480077312, guid: fce5c1571f3a05c439ef2b6f5b3b500b, type: 3}
+  m_PrefabInstance: {fileID: 965562143}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4dd572a6a63544fb228aa65d513e62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LightTriggerEntity
 --- !u!1 &1781086486
 GameObject:
   m_ObjectHideFlags: 0
@@ -26510,6 +26678,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1815980346}
   m_CullTransparentMesh: 1
+--- !u!114 &1816370080 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3715350150480077312, guid: fce5c1571f3a05c439ef2b6f5b3b500b, type: 3}
+  m_PrefabInstance: {fileID: 1741488549}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4dd572a6a63544fb228aa65d513e62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LightTriggerEntity
 --- !u!1001 &1816943643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27817,6 +27996,7 @@ Transform:
   - {fileID: 1478678628}
   - {fileID: 54599560}
   - {fileID: 761647592}
+  - {fileID: 660317988}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &1915383210

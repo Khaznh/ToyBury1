@@ -7,7 +7,7 @@ public class Doll : CanPickUpItem
 
     public AudioEventSO sfxChanel;
 
-    private AudioSource dollAudioSource;
+    [SerializeField] private AudioSource dollAudioSource;
 
     private void Awake()
     {

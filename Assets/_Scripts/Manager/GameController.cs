@@ -7,6 +7,12 @@ using UnityEngine.UI;
 
 public class GameController : Singleton<GameController>
 {
+    [Header("Light Trigger")]
+    [SerializeField] private List<LightTriggerEntity> lightTriggerEntities;
+
+    [Header("Audio")]
+    public AudioSource playerAudioSource;
+
     [Header("Door")]
     public bool mainDoorOpen = false;
 
@@ -240,6 +246,14 @@ public class GameController : Singleton<GameController>
     public bool IsPaperCanvaActive()
     {
         return paperCanva.activeInHierarchy;
+    }
+
+    public void ForceToTurnOff()
+    {
+        foreach (var entity in lightTriggerEntities)
+        {
+            entity.ForceTurnOff();
+        }
     }
 
     public void SetPlayerControl(bool isEnable)
