@@ -18,6 +18,6 @@ public class SensitivitySlider : MonoBehaviour
         float actualSensitivity = sliderValue * 0.5f;
 
         PlayerPrefs.SetFloat("MouseSensitivity", actualSensitivity);
-        OnSensitivityChanged.Invoke();
+        OnSensitivityChanged?.Invoke();
     }
 }

@@ -277,6 +277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9657880}
   - component: {fileID: 9657879}
+  - component: {fileID: 9657881}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: Untagged
@@ -342,6 +343,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1646956530}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9657881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9657878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineBasicMultiChannelPerlin
+  NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
+  PivotOffset: {x: 0, y: 0, z: 0}
+  AmplitudeGain: 0.25
+  FrequencyGain: 1
+  m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1001 &20300289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4557,6 +4575,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1434511198}
   - component: {fileID: 1434511197}
+  - component: {fileID: 1434511199}
   m_Layer: 0
   m_Name: MainSettingCamera
   m_TagString: Untagged
@@ -4622,6 +4641,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1140535234}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1434511199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434511196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineBasicMultiChannelPerlin
+  NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
+  PivotOffset: {x: 0, y: 0, z: 0}
+  AmplitudeGain: 0.25
+  FrequencyGain: 1
+  m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1451115331 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8602845841047369522, guid: c6a1c2c5b904f1646adc5012bf300e45, type: 3}
