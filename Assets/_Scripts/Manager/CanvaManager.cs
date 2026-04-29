@@ -8,17 +8,19 @@ public class CanvaManager : Singleton<CanvaManager>
 {
     public TextMeshProUGUI notiText;
     public TextMeshProUGUI useText;
+    public TextMeshProUGUI dangerText;
 
     [SerializeField] private NotiTextSO interact;
     [SerializeField] private NotiTextSO use;
 
     private Coroutine useTextCoroutine;
+    private Coroutine dangerTextCoroutine;
 
     public override void Awake()
     {
         base.Awake();
 
-        if (notiText == null || useText == null)
+        if (notiText == null || useText == null || dangerText == null)
         {
             Debug.Log("CanvaManager variables is not found");
         }
@@ -79,6 +81,27 @@ public class CanvaManager : Singleton<CanvaManager>
         useTextCoroutine = null;
     }
 
+    private IEnumerator ShowDangerTextRoutine(string message)
+    {
+        dangerText.text = message;
+        dangerText.gameObject.SetActive(true);
+        Color color = dangerText.color;
+        color.a = 1f;
+        dangerText.color = color;
+        yield return new WaitForSeconds(3f);
+        float fadeDuration = 1f;
+        float t = 0f;
+        while (t < fadeDuration)
+        {
+            t += Time.deltaTime;
+            color.a = Mathf.Lerp(1f, 0f, t / fadeDuration);
+            dangerText.color = color;
+            yield return null;
+        }
+        dangerText.gameObject.SetActive(false);
+        dangerTextCoroutine = null;
+    }
+
     public void HideUseTextImmediate()
     {
         if (useTextCoroutine != null)
@@ -94,6 +117,31 @@ public class CanvaManager : Singleton<CanvaManager>
             useText.color = color;
 
             useText.gameObject.SetActive(false);
+        }
+    }
+
+    public void ShowDangerText(string message)
+    {
+        HideDangerText();
+
+        StartCoroutine(ShowDangerTextRoutine(message));
+    }
+
+    public void HideDangerText()
+    {
+        if (dangerTextCoroutine != null)
+        {
+            StopCoroutine(dangerTextCoroutine);
+            dangerTextCoroutine = null;
+        }
+
+        if (dangerText != null)
+        {
+            Color color = dangerText.color;
+            color.a = 1f;
+            dangerText.color = color;
+
+            dangerText.gameObject.SetActive(false);
         }
     }
 

@@ -10,6 +10,7 @@ public class NoteItem : Item
 
         if (GameController.Instance.currentDoll == null)
         {
+            CanvaManager.Instance.ShowDangerText("No assignment to active.");
             return;
         }
 

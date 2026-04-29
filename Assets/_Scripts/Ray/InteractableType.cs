@@ -13,7 +13,10 @@ public enum InteractableType
     ReportPaper,
     StoryPaper,
     Ring,
-    Trigger
+    LightTrigger,
+    SubmitTrigger,
+    SubmitHolder,
+    DangerTrigger,
 }
 //-0.017, 0.1
 

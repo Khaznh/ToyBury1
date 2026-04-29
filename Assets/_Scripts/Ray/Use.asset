@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entries:
   - key: 0
-    value: Press F to turn on/off
+    value: '"F" to turn on/off'
   - key: 3
-    value: Press F to measue
+    value: '"F" to measue'
   - key: 1
-    value: Press F to spab
+    value: '"F" to spab'

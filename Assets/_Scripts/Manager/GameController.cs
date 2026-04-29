@@ -171,6 +171,7 @@ public class GameController : Singleton<GameController>
     {
         if (currentDoll != null)
         {
+            CanvaManager.Instance.ShowDangerText("You have not finished your previous assignment.");
             return;
         }
 

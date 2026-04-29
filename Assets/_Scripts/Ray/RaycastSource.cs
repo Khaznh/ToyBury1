@@ -39,6 +39,12 @@ public class RaycastSource : Singleton<RaycastSource>
             }
         }
 
+        if (GameController.Instance.canCallName)
+        {
+            CanvaManager.Instance.ShowText(InteractableType.CallName);
+            hitInteractable = true;
+        }
+
         if (!hitInteractable)
         {
             canvaManager.HideText();

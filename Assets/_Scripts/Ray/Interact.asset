@@ -14,14 +14,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entries:
   - key: 0
-    value: Press E to pick up
+    value: '"E" to pick up'
   - key: 1
-    value: Press E to pick up
+    value: '"E" to pick up'
   - key: 3
-    value: Press E to pick up
+    value: '"E" to pick up'
   - key: 4
-    value: Press E to use
+    value: '"E" to active PC'
   - key: 9
-    value: Press E to pick up
+    value: '"E" to pick up'
   - key: 5
-    value: Press E to place/take the doll
+    value: '"E" to place/take the doll'
+  - key: 12
+    value: '"E" to Ring'
+  - key: 10
+    value: '"E" to pick up'
+  - key: 11
+    value: '"E" to interact'
+  - key: 6
+    value: '"E" to take photo'
+  - key: 2
+    value: '"E" to open/close'
+  - key: 13
+    value: '"E" to turn on/off light '
+  - key: 14
+    value: '"E" to submit result '
+  - key: 15
+    value: '"E" to put doll in/out'
+  - key: 16
+    value: '"E" to close/open metal door'
+  - key: 7
+    value: '"F" to call doll name'
