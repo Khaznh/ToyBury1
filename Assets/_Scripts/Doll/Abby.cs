@@ -33,8 +33,6 @@ public class Abby : Doll
 
         GameController.Instance.isScissor = true;
 
-        // Jump out the chair
-
 
         transform.SetParent(null);
         rb.isKinematic = false;
@@ -44,7 +42,7 @@ public class Abby : Doll
         rb.AddForce(dirVetor * jumpForce, ForceMode.Impulse);
 
 
-        DialogueManager.Instance.StartDialogue(dialogueInfo);
+        DialogueManager.Instance.StartDialogue(dialogueInfo, dollAudioSource);
     }
 
     protected override void InteractWithCamera()

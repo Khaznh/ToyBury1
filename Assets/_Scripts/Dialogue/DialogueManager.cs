@@ -1,71 +1,125 @@
+﻿using DG.Tweening;
+using NUnit.Framework;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DialogueManager : Singleton<DialogueManager>
 {
-    private DialogueSO currentDialogue;
+    [SerializeField] private DialogueSO testDia;
+    [SerializeField] private AudioEventSO sfxChannel;
 
-    private int currentIndex = 0;
+    private AudioSource currentAudioSource;
+
+    private Queue<DialogueLine> dialogueLines = new();
+    private bool isTyping = false;
+
     private PlayerInput playerInput;
-
-    public override void Awake()
-    {
-        base.Awake();
-        playerInput = new PlayerInput();
-    }
+    private DialogueLine line;
 
     private void OnEnable()
     {
+        playerInput = new PlayerInput();
         playerInput.Enable();
-        playerInput.Player.Skip.performed += _ => GoToNextNode();
+        playerInput.Player.Skip.performed += OnSkipPressed;
     }
 
     private void OnDisable()
     {
-        playerInput.Player.Skip.performed -= _ => GoToNextNode();
+        playerInput.Player.Skip.performed -= OnSkipPressed;
         playerInput.Disable();
     }
 
-    public void StartDialogue(DialogueSO dialogue)
+
+    private void OnSkipPressed(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        currentDialogue = dialogue;
-        currentIndex = 0;
-        FocusCanvas.Instance.ShowFocus();
+        SkipDialogue();
+    }
+
+    public void StartDialogue(DialogueSO dialogue, AudioSource audioSource)
+    {
+        dialogueLines.Clear();
+        currentAudioSource = audioSource;
+        foreach (var line in dialogue.dialogueLines)
+        {
+            dialogueLines.Enqueue(line);
+        }
+
         DialogueCanvas.Instance.ShowDialogue();
-        DialogueCanvas.Instance.SetDialogue(currentDialogue.dialogueLine[0]);
+        FocusCanvas.Instance.ShowFocus();
         GameController.Instance.SetPlayerControl(false);
         GameController.Instance.SetPlayerCursor(true);
+
+        DisplayDialogueLine();
     }
 
-    private void EndDialogue()
+    private void DisplayDialogueLine()
     {
-        FocusCanvas.Instance.DisableFocus();
-        DialogueCanvas.Instance.DisableDialogue();
-        GameController.Instance.SetPlayerControl(true);
-        GameController.Instance.SetPlayerCursor(false);
-    }
+        if (isTyping) { return; }
 
-    public void GoToNode(string nodeID)
-    {
-        DialogueNode node = currentDialogue.GetNode(nodeID);
-        DialogueCanvas.Instance.SetDialogue(node);
-    }
-
-    private void GoToNextNode()
-    {
-        currentIndex++;
-
-        if (currentIndex < currentDialogue.dialogueLine.Count)
-        {
-            if (currentDialogue.dialogueLine[currentIndex].nodeID == "End_8")
-            {
-                Debug.Log("Phat Nhac");
-
-            }
-
-            DialogueCanvas.Instance.SetDialogue(currentDialogue.dialogueLine[currentIndex]);
-        } else
+        if (dialogueLines.Count == 0)
         {
             EndDialogue();
+            return;
         }
+
+        line = dialogueLines.Dequeue();
+
+        DialogueCanvas.Instance.nameText.text = line.speakerName;
+        DialogueCanvas.Instance.dialogText.text = line.dialogueText;
+
+        isTyping = true;
+
+        DialogueCanvas.Instance.dialogText.ForceMeshUpdate();
+        int totalCharacters = DialogueCanvas.Instance.dialogText.textInfo.characterCount;
+
+        float duration = 0f;
+
+        if (line.audioClip != null)
+        {
+            sfxChannel.RaiseEvent(line.audioClip, currentAudioSource);
+            duration = line.audioClip.length;
+        }
+        else
+        {
+            duration = totalCharacters * 0.05f;
+        }
+
+
+        DialogueCanvas.Instance.dialogText.maxVisibleCharacters = 0;
+        DOTween.To(() => DialogueCanvas.Instance.dialogText.maxVisibleCharacters,
+           x => DialogueCanvas.Instance.dialogText.maxVisibleCharacters = x,
+           totalCharacters,
+           duration)
+        .SetEase(Ease.Linear)
+        .SetTarget(DialogueCanvas.Instance.dialogText)
+        .SetUpdate(true)
+        .OnComplete(() =>
+        {
+            isTyping = false;
+            DialogueCanvas.Instance.dialogText.maxVisibleCharacters = totalCharacters;
+        });
+    }
+
+    private void SkipDialogue()
+    {
+        if (isTyping) 
+        {
+            currentAudioSource.Stop();
+            DOTween.Complete(DialogueCanvas.Instance.dialogText);
+        } else
+        {
+            DisplayDialogueLine();
+        }
+    }
+
+    public void EndDialogue()
+    {
+        dialogueLines.Clear();
+        currentAudioSource = null;
+        DialogueCanvas.Instance.DisableDialogue();
+        FocusCanvas.Instance.DisableFocus();
+        GameController.Instance.SetPlayerControl(true);
+        GameController.Instance.SetPlayerCursor(false);
     }
 }

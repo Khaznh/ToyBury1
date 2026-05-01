@@ -9,27 +9,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79ca5fcb590a3c148a70877faa6b7adc, type: 3}
+  m_Script: {fileID: 11500000, guid: 983baf44e5cdb194583b1c23ada50e41, type: 3}
   m_Name: Abby
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
-  dialogueLine:
-  - nodeID: Abby_1
-    speakerName: Abby
-    text: Please! No more!
-    userChoice: []
-  - nodeID: Abby_2
-    speakerName: Abby
-    text: I couldn't fix her! I couldn't.
-    userChoice: []
-  - nodeID: Abby_3
-    speakerName: Abby
-    text: I tried to fix her, instead she has broken me, too!
-    userChoice: []
-  - nodeID: Abby_4
-    speakerName: Abby
-    text: Now look at me, I'm a monster!
-    userChoice: []
-  - nodeID: Abby_5
-    speakerName: Abby
-    text: Please...  I beg of you, don't destroy me!
-    userChoice: []
+  dialogueLines:
+  - speakerName: Abby
+    dialogueText: Please! No more!
+    audioClip: {fileID: 8300000, guid: e38a2c75c7d296447b674d7724d649dc, type: 3}
+    answers: []
+  - speakerName: Abby
+    dialogueText: I couldn't fix her, I couldn't
+    audioClip: {fileID: 8300000, guid: 425e1613dd98a344b80a16ad1a04ea32, type: 3}
+    answers: []
+  - speakerName: Abby
+    dialogueText: I tried to fix her, instead she has broken me, too!
+    audioClip: {fileID: 8300000, guid: 3c25f80553c0fc943b31f73b5d46e2c6, type: 3}
+    answers: []
+  - speakerName: Abby
+    dialogueText: Now look at me, I'm a monster!
+    audioClip: {fileID: 8300000, guid: 2d94bb1f2b2a9854b9e8b978f31d24b4, type: 3}
+    answers: []
+  - speakerName: Abby
+    dialogueText: 'Please... I beg of you, don''t destroy me! '
+    audioClip: {fileID: 8300000, guid: 3478c5cf5d551ec42877e0d732722bef, type: 3}
+    answers: []

@@ -12,6 +12,13 @@ public class GameController : Singleton<GameController>
 
     [Header("Audio")]
     public AudioSource playerAudioSource;
+    public AudioSource endGameSource;
+    public AudioSource backgroundSource;
+
+    public AudioClip end1Clip;
+    public AudioClip end2Clip;
+
+    public AudioEventSO backgroundSO;
 
     [Header("Door")]
     public bool mainDoorOpen = false;
@@ -69,6 +76,16 @@ public class GameController : Singleton<GameController>
     private int andyEscapeMaxCount = 2;
 
     [SerializeField] private DialogueSO endGameDialogue;
+
+    public void StartEnd1Music()
+    {
+        backgroundSO.RaiseEvent(end1Clip, backgroundSource);
+    }
+
+    public void StartEnd2Music()
+    {
+        backgroundSO.RaiseEvent(end2Clip, backgroundSource);
+    }
 
     //For condition
     public void ResetCondition()
@@ -149,7 +166,7 @@ public class GameController : Singleton<GameController>
         //Sep bao
         if (dollsToCheck.Count == 0)
         {
-            DialogueManager.Instance.StartDialogue(endGameDialogue);
+            DialogueManager.Instance.StartDialogue(endGameDialogue, endGameSource);
             return;
         }
     }

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 983baf44e5cdb194583b1c23ada50e41, type: 3}
+  m_Name: Boss
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
+  dialogueLines:
+  - speakerName: BOSS
+    dialogueText: Exceptional... truly. We are so close now, aren't we?
+    audioClip: {fileID: 8300000, guid: 4e687e81657964b46b46b6528f5e211e, type: 3}
+    answers: []
+  - speakerName: BOSS
+    dialogueText: Just one more, just one final interaction... and our masterpiece
+      will finally be whole.
+    audioClip: {fileID: 8300000, guid: 1cc9e3d824bd9e243b206511e79a8ca2, type: 3}
+    answers: []
+  - speakerName: BOSS
+    dialogueText: I hope you realize how vital you are to this process. You aren't
+      just an employee..
+    audioClip: {fileID: 8300000, guid: c50d687fa8e112c4cb74d623ca60e48f, type: 3}
+    answers: []
+  - speakerName: BOSS
+    dialogueText: It is your specific... resonance... that brings them to life. You
+      are the only constant in this entire collection. Without you, they are just...
+      plastic and dust.
+    audioClip: {fileID: 8300000, guid: 1d8b6b730fe77b6489a6e713a4366be8, type: 3}
+    answers: []
+  - speakerName: BOSS
+    dialogueText: Now... let us complete the test with <color=red>the final doll</color>,
+      hmph.
+    audioClip: {fileID: 8300000, guid: b4d418032adf47d46aa21229345da5a5, type: 3}
+    answers: []

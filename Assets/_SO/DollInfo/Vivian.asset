@@ -28,7 +28,7 @@ MonoBehaviour:
     destroyed immediately, as it has already caused the death of a human being.
   dollAvatar: {fileID: 21300000, guid: 4175b1cdf4870174baa4764bf43e620e, type: 3}
   dollPicure: {fileID: 21300000, guid: 3089a0953b1b2554a815256aeb5809b7, type: 3}
-  dollStatus: 1
+  dollStatus: 0
   dollStab: {fileID: 8300000, guid: b746c76d08eff424caefab86f869a8a8, type: 3}
   dollCallName: {fileID: 8300000, guid: b2058b764d03c9d4ab500988a3436810, type: 3}
   testResults: 0100000001000000010000000100000001000000

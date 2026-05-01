@@ -2,30 +2,31 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Dialogue", menuName = "Dialogue/DialogueSO")]
+
+[CreateAssetMenu(fileName = "NewDialogue", menuName = "DialogSystem/DialogueData")]
 public class DialogueSO : ScriptableObject
 {
-    public List<DialogueNode> dialogueLine;
-
-    public DialogueNode GetNode(string id)
-    {
-        return dialogueLine.Find(n => n.nodeID == id);
-    }
+    public List<DialogueLine> dialogueLines;
 }
 
 [System.Serializable]
-public class DialogueNode
+public struct DialogueLine
 {
-    public string nodeID;
-    public string speakerName; 
-    [TextArea(3, 10)]
-    public string text;
-    public List<Choice> userChoice;
+    public string speakerName;
+    public string dialogueText;
+    public AudioClip audioClip;
+    public List<Answer> answers;
 }
 
 [System.Serializable]
-public class Choice
+public struct Answer
 {
-    public string choiceText;
-    public string nextNodeID;
+    public string answerText;
+    public DialogueEventType eventType;
+}
+
+public enum DialogueEventType
+{
+    None,
+    WantToSeeTutorial,
 }
