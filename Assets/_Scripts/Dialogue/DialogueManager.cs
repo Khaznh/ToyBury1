@@ -2,11 +2,13 @@
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DialogueManager : Singleton<DialogueManager>
 {
-    [SerializeField] private DialogueSO testDia;
+    [SerializeField] private DialogueSO tutorialSO;
+    [SerializeField] private DialogueSO startSO;
     [SerializeField] private AudioEventSO sfxChannel;
 
     private AudioSource currentAudioSource;
@@ -30,6 +32,10 @@ public class DialogueManager : Singleton<DialogueManager>
         playerInput.Disable();
     }
 
+    private void Start()
+    {
+        StartDialogue(startSO, GameController.Instance.endGameSource);
+    }
 
     private void OnSkipPressed(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
@@ -67,6 +73,21 @@ public class DialogueManager : Singleton<DialogueManager>
 
         DialogueCanvas.Instance.nameText.text = line.speakerName;
         DialogueCanvas.Instance.dialogText.text = line.dialogueText;
+
+        if (DialogueCanvas.Instance.ChooseHolder.transform.childCount > 0)
+        {
+            foreach (Transform child in DialogueCanvas.Instance.ChooseHolder.transform)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        foreach (var answer in line.answers)
+        {
+            GameObject choice = Instantiate(DialogueCanvas.Instance.choicePrefap, DialogueCanvas.Instance.ChooseHolder.transform);
+            choice.GetComponentInChildren<TextMeshProUGUI>().text = answer.answerText;
+            choice.GetComponent<DialogueButton>().buttonClick = answer.eventType;
+        }
 
         isTyping = true;
 
@@ -109,6 +130,7 @@ public class DialogueManager : Singleton<DialogueManager>
             DOTween.Complete(DialogueCanvas.Instance.dialogText);
         } else
         {
+            if (line.answers != null) { return; }
             DisplayDialogueLine();
         }
     }
@@ -121,5 +143,154 @@ public class DialogueManager : Singleton<DialogueManager>
         FocusCanvas.Instance.DisableFocus();
         GameController.Instance.SetPlayerControl(true);
         GameController.Instance.SetPlayerCursor(false);
+    }
+
+    public void TriggerEvent(DialogueEventType eventType)
+    {
+        switch (eventType)
+        {
+            case DialogueEventType.WantToSeeTutorial:
+                EndDialogue();
+                TutoralCanva.Instance.YourJobTutorial.SetActive(true);
+                StartDialogue(tutorialSO, GameController.Instance.endGameSource);
+                GameController.Instance.targetCanva.SetActive(false);
+                break;
+            case DialogueEventType.AudioTestTutorial:
+                TutoralCanva.Instance.YourJobTutorial.SetActive(false);
+                TutoralCanva.Instance.AudioTestTutorial.SetActive(true);
+
+                if (isTyping)
+                {
+                    currentAudioSource.Stop();
+                    DOTween.Complete(DialogueCanvas.Instance.dialogText);
+                }
+                else
+                {
+                    DisplayDialogueLine();
+                }
+                break;
+            case DialogueEventType.NameCallingTutorial:
+                TutoralCanva.Instance.AudioTestTutorial.SetActive(false);
+                TutoralCanva.Instance.NameCallingTutorial.SetActive(true);
+
+                if (isTyping)
+                {
+                    currentAudioSource.Stop();
+                    DOTween.Complete(DialogueCanvas.Instance.dialogText);
+                }
+                else
+                {
+                    DisplayDialogueLine();
+                }
+                break;
+            case DialogueEventType.PhotoTutorial:
+                TutoralCanva.Instance.NameCallingTutorial.SetActive(false);
+                TutoralCanva.Instance.PhotoTutorial.SetActive(true);
+
+                if (isTyping)
+                {
+                    currentAudioSource.Stop();
+                    DOTween.Complete(DialogueCanvas.Instance.dialogText);
+                }
+                else
+                {
+                    DisplayDialogueLine();
+                }
+                break;
+            case DialogueEventType.TempTutorial:
+                TutoralCanva.Instance.PhotoTutorial.SetActive(false);
+                TutoralCanva.Instance.TempTutorial.SetActive(true);
+
+                if (isTyping)
+                {
+                    currentAudioSource.Stop();
+                    DOTween.Complete(DialogueCanvas.Instance.dialogText);
+                }
+                else
+                {
+                    DisplayDialogueLine();
+                }
+                break;
+            case DialogueEventType.PhysicsTutorial:
+                TutoralCanva.Instance.TempTutorial.SetActive(false);
+                TutoralCanva.Instance.PhysicsTutorial.SetActive(true);
+
+                if (isTyping)
+                {
+                    currentAudioSource.Stop();
+                    DOTween.Complete(DialogueCanvas.Instance.dialogText);
+                }
+                else
+                {
+                    DisplayDialogueLine();
+                }
+                break;
+            case DialogueEventType.ComputerTutorial:
+                TutoralCanva.Instance.PhysicsTutorial.SetActive(false);
+                TutoralCanva.Instance.ComputerTutorial.SetActive(true);
+
+                if (isTyping)
+                {
+                    currentAudioSource.Stop();
+                    DOTween.Complete(DialogueCanvas.Instance.dialogText);
+                }
+                else
+                {
+                    DisplayDialogueLine();
+                }
+                break;
+            case DialogueEventType.BellTutorial:
+                TutoralCanva.Instance.ComputerTutorial.SetActive(false);
+                TutoralCanva.Instance.BellTutorial.SetActive(true);
+
+                if (isTyping)
+                {
+                    currentAudioSource.Stop();
+                    DOTween.Complete(DialogueCanvas.Instance.dialogText);
+                }
+                else
+                {
+                    DisplayDialogueLine();
+                }
+                break;
+            case DialogueEventType.SubmitTutorial:
+                TutoralCanva.Instance.BellTutorial.SetActive(false);
+                TutoralCanva.Instance.SubmitTutorial.SetActive(true);
+
+                if (isTyping)
+                {
+                    currentAudioSource.Stop();
+                    DOTween.Complete(DialogueCanvas.Instance.dialogText);
+                }
+                else
+                {
+                    DisplayDialogueLine();
+                }
+                break;
+            case DialogueEventType.EndTutorial:
+                TutoralCanva.Instance.SubmitTutorial.SetActive(false);
+                GameController.Instance.targetCanva.SetActive(true);
+                if (isTyping)
+                {
+                    currentAudioSource.Stop();
+                    DOTween.Complete(DialogueCanvas.Instance.dialogText);
+                }
+                else
+                {
+                    DisplayDialogueLine();
+                }
+                break;
+            default:
+                if (isTyping)
+                {
+                    currentAudioSource.Stop();
+                    DOTween.Complete(DialogueCanvas.Instance.dialogText);
+                }
+                else
+                {
+                    DisplayDialogueLine();
+                }
+                break;
+        }
     }
 }

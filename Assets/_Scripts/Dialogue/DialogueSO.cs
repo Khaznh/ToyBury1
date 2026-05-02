@@ -29,4 +29,14 @@ public enum DialogueEventType
 {
     None,
     WantToSeeTutorial,
+    YourJobTutorial,
+    AudioTestTutorial,
+    NameCallingTutorial,
+    PhotoTutorial,
+    TempTutorial,
+    PhysicsTutorial,
+    ComputerTutorial,
+    BellTutorial,
+    SubmitTutorial,
+    EndTutorial,
 }

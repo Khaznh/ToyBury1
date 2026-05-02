@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 983baf44e5cdb194583b1c23ada50e41, type: 3}
+  m_Name: Tutorials
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
+  dialogueLines:
+  - speakerName: BOSS
+    dialogueText: Your job is to investigate cursed dolls. You'll run a series of
+      tests with each doll. If a test yields abnormal results, mark it with a red
+      check mark. If the doll shows no reaction, mark it with a green X.
+    audioClip: {fileID: 8300000, guid: 3db0c63128ac01641ba56c32c6a699ed, type: 3}
+    answers:
+    - answerText: I got it
+      eventType: 3
+  - speakerName: BOSS
+    dialogueText: Audio Test. To do an audio test, place the doll in a secured room
+      on a chair and play the audio through the computer.
+    audioClip: {fileID: 8300000, guid: 3fd829cf193636f4f805d8659ffcf6f4, type: 3}
+    answers:
+    - answerText: I got it
+      eventType: 4
+  - speakerName: BOSS
+    dialogueText: Name Call. To call the doll's name, interact with the glass in
+      front of the doll while it sits in the secured room.
+    audioClip: {fileID: 8300000, guid: 853437238cccbc1498fb87e1d5b21188, type: 3}
+    answers:
+    - answerText: I got it
+      eventType: 5
+  - speakerName: BOSS
+    dialogueText: Photograph Capture. To take a photo, place the doll on the chair
+      in the back of the secured room and use the camera. Compare the developed photo
+      with reality.
+    audioClip: {fileID: 8300000, guid: 24a55f3acebabc54e950f91333d82dfa, type: 3}
+    answers:
+    - answerText: I got it
+      eventType: 6
+  - speakerName: BOSS
+    dialogueText: "Temperature Test. To measure the doll's temperature, use the thermometer
+      while looking at the doll. The room's temperature is between 16-25\xB0C. Any
+      other value shown from the doll is an anomaly."
+    audioClip: {fileID: 8300000, guid: 7e519957716b5084ba54ab84c2d2206d, type: 3}
+    answers:
+    - answerText: I got it
+      eventType: 7
+  - speakerName: BOSS
+    dialogueText: Physical Discomfort. To inflict pain, stab the doll with the scissors
+      while it's in front of you.
+    audioClip: {fileID: 8300000, guid: 00d3c68d81c15ec439ae80fcc82c7d2d, type: 3}
+    answers:
+    - answerText: I got it
+      eventType: 8
+  - speakerName: BOSS
+    dialogueText: The computer provides help with items and tracks your progress.
+      The 'Report' section shows tested dolls and any mistakes. Without an active
+      assignment, you can retry any doll, or read its result, which is not required.
+    audioClip: {fileID: 8300000, guid: ebb6b0a7d8d7ba44a8f3084ba34f4b5d, type: 3}
+    answers:
+    - answerText: I got it
+      eventType: 9
+  - speakerName: BOSS
+    dialogueText: To start working with a new doll, ring the bell on the table. Study
+      the document on the table before testing.
+    audioClip: {fileID: 8300000, guid: f58e3a4171379be4e95a894292f76551, type: 3}
+    answers:
+    - answerText: I got it
+      eventType: 10
+  - speakerName: BOSS
+    dialogueText: After completing all tests, place the doll in either the OK box
+      or the Dangerous box. If it has shown any unusual behavior, even outside of
+      testing, put it in the Dangerous box.
+    audioClip: {fileID: 8300000, guid: 03100227bf9c1614181343f3d4bda97f, type: 3}
+    answers:
+    - answerText: I got it
+      eventType: 11
