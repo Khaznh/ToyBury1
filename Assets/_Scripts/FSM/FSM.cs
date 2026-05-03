@@ -7,7 +7,7 @@ public class FSM
 
     public void ChangeState(State newState)
     {
-        currentState.ExitState();
+        currentState?.ExitState();
         previousState = currentState;
         currentState = newState;
         currentState.EnterState();

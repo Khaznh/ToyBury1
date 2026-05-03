@@ -9,6 +9,8 @@ public class LightTriggerEntity : Entity
 
     [SerializeField] private bool isNeedToTurnOn = false;
 
+    public int lightID;
+
     public AudioClip soundToOn;
     public AudioClip soundToOff;
     public AudioEventSO sfxChannel;
@@ -24,9 +26,26 @@ public class LightTriggerEntity : Entity
         fsm = new FSM();
         onState = new LightTriggerOnState(fsm, this);
         offState = new LightTriggerOffState(fsm, this);
-        if (isNeedToTurnOn)
+    }
+
+    private void Start()
+    {
+        if (isNeedToTurnOn && SaveGameManager.Instance.newGame)
         {
             fsm.Init(onState);
+        }
+        else if (!SaveGameManager.Instance.newGame)
+        {
+            bool isLightOn = PlayerPrefs.GetInt("Light_" + lightID, 0) == 1;
+            Debug.Log(isLightOn + "_" + lightID);
+            if (isLightOn)
+            {
+                fsm.ChangeState(onState);
+            }
+            else
+            {
+                fsm.ChangeState(offState);
+            }
         }
         else
         {
