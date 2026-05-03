@@ -8,6 +8,7 @@ public class Doll : CanPickUpItem
     public AudioEventSO sfxChanel;
 
     public AudioSource dollAudioSource;
+    public int dollID;
 
     private void Awake()
     {

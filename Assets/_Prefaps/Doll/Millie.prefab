@@ -197,6 +197,8 @@ MonoBehaviour:
     isTestCorrect: 0
     isTypeCorrect: 0
   sfxChanel: {fileID: 11400000, guid: d1f339a1939ad1c40b57c156acd6e332, type: 2}
+  dollAudioSource: {fileID: 0}
+  dollID: 2
 --- !u!65 &1751913162542613651
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -10,7 +10,6 @@ public class PCManager : Singleton<PCManager>
     [SerializeField] private CinemachineCamera playerCamera;
 
     [SerializeField] private GameObject dollCategoryPrefap;
-    [SerializeField] private DollConfig chooseDoll;
 
     [Header("SFX")]
     [SerializeField] private AudioEventSO sfxChannel;
@@ -28,6 +27,13 @@ public class PCManager : Singleton<PCManager>
     [SerializeField] private GameObject reportContent;
     [SerializeField] private GameObject testContent;
     [SerializeField] private GameObject helpContent;
+    [SerializeField] private GameObject displayFullTutorialContent;
+    [SerializeField] private GameObject testInfoContent;
+    [SerializeField] private GameObject audioInfoContent;
+    [SerializeField] private GameObject namecallInfoContent;
+    [SerializeField] private GameObject photoInfoContent;
+    [SerializeField] private GameObject tempurateInfoContent;
+    [SerializeField] private GameObject physicalInfoContent;
     public GameObject dollInfoContent;
     [SerializeField] private GameObject body;
 
@@ -88,6 +94,60 @@ public class PCManager : Singleton<PCManager>
         GameController.Instance.SetPlayerCursor(true);
     }
 
+    public void ShowTestInfoContent()
+    {
+        HideAll();
+        header.SetActive(true);
+        footer.SetActive(true);
+        body.SetActive(true);
+        testInfoContent.SetActive(true);
+    }
+
+    public void ShowAudioInfoContent()
+    {
+        HideAll();
+        header.SetActive(true);
+        footer.SetActive(true);
+        body.SetActive(true);
+        audioInfoContent.SetActive(true);
+    }
+
+    public void ShowNamecallInfoContent()
+    {
+        HideAll();
+        header.SetActive(true);
+        footer.SetActive(true);
+        body.SetActive(true);
+        namecallInfoContent.SetActive(true);
+    }
+
+    public void ShowPhotoInfoContent()
+    {
+        HideAll();
+        header.SetActive(true);
+        footer.SetActive(true);
+        body.SetActive(true);
+        photoInfoContent.SetActive(true);
+    }
+
+    public void ShowTempurateInfoContent()
+    {
+        HideAll();
+        header.SetActive(true);
+        footer.SetActive(true);
+        body.SetActive(true);
+        tempurateInfoContent.SetActive(true);
+    }
+
+    public void ShowPhysicalInfoContent()
+    {
+        HideAll();
+        header.SetActive(true);
+        footer.SetActive(true);
+        body.SetActive(true);
+        physicalInfoContent.SetActive(true);
+    }
+
     public void ShowMainMenu()
     {
         HideAll();
@@ -96,11 +156,16 @@ public class PCManager : Singleton<PCManager>
         header.SetActive(true);
         footer.SetActive(true);
         mainMenuContent.SetActive(true);
-
-        chooseDoll = null;
     }
 
-
+    public void ShowDisplayFullTutorial()
+    {
+        HideAll();
+        body.SetActive(true);
+        header.SetActive(true);
+        footer.SetActive(true);
+        displayFullTutorialContent.SetActive(true);
+    }
 
     public void ShowErrorScreen()
     {
@@ -119,6 +184,13 @@ public class PCManager : Singleton<PCManager>
         helpContent.SetActive(false);
         errorAllContent.SetActive(false);
         dollInfoContent.SetActive(false);
+        displayFullTutorialContent.SetActive(false);
+        testInfoContent.SetActive(false);
+        audioInfoContent.SetActive(false);
+        namecallInfoContent.SetActive(false);
+        photoInfoContent.SetActive(false);
+        tempurateInfoContent.SetActive(false);
+        physicalInfoContent.SetActive(false);
     }
 
     public void ShowReportScreen()
@@ -163,13 +235,18 @@ public class PCManager : Singleton<PCManager>
         {
             Destroy(reportDollList.transform.GetChild(i).gameObject);
         }
-        
-        foreach(GameObject doll in GameController.Instance.dollsHasDone)
+
+        foreach (GameObject doll in GameController.Instance.dollsHasDone)
         {
             DollCategory dollCategory = Instantiate(dollCategoryPrefap, reportDollList.transform).GetComponent<DollCategory>();
             dollCategory.dollHolder = doll.GetComponent<Doll>();
             dollCategory.nameText.text = doll.GetComponent<Doll>().dollSO.dollName.ToString();
         }
+    }
+
+    public void ResetItemLo()
+    {
+        ResetItemManager.Instance.ResetItem();
     }
 
     public void ChooseDollToWatchReport()

@@ -75,6 +75,8 @@ public class GameController : Singleton<GameController>
     private int andyTestCount = 0;
     private int andyEscapeMaxCount = 2;
 
+    public Vector3 trash = new Vector3(22.332f, 0.317f, 3.03f);
+
     [SerializeField] private DialogueSO endGameDialogue;
 
     public void StartEnd1Music()
@@ -157,7 +159,17 @@ public class GameController : Singleton<GameController>
 
         currentDoll.GetComponent<Doll>().dollTestStatus.isTestCorrect = IsPlayerTestCorrect();
         currentDoll.transform.SetParent(null);
-        currentDoll.transform.position = new Vector3(22.332f, 0.317f, 3.03f);
+        currentDoll.transform.position = trash;
+
+        if (PlayerPrefs.GetInt(currentDoll.GetComponent<Doll>().dollID.ToString(),0) == 0)
+        {
+            int hasDoneCount = PlayerPrefs.GetInt("DollHasDone", 0);
+            PlayerPrefs.SetInt("DollHasDone", hasDoneCount);
+        }
+
+        PlayerPrefs.SetInt(currentDoll.GetComponent<Doll>().dollID.ToString(), 1); // 1 for Already tested
+        PlayerPrefs.SetInt(currentDoll.GetComponent<Doll>().dollID.ToString() + "_isTypeCorrect", currentDoll.GetComponent<Doll>().dollTestStatus.isTypeCorrect ? 1 : 0); // 1 for true, 0 for false
+        PlayerPrefs.SetInt(currentDoll.GetComponent<Doll>().dollID.ToString() + "_isTestCorrect", IsPlayerTestCorrect() ? 1 : 0); // 1 for true, 0 for false
         ResetCondition();
         dollsHasDone.Add(currentDoll);
         dollsToCheck.RemoveAt(0);
