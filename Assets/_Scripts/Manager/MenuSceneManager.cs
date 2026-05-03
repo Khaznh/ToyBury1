@@ -11,11 +11,11 @@ public class MenuSceneManager : Singleton<MenuSceneManager>
 
     [SerializeField] private GameObject mainPackage;
     [SerializeField] private GameObject optionPackage;
+    [SerializeField] private GameObject playPackage;
 
     [SerializeField] private GameObject mainControlCanvas;
     [SerializeField] private GameObject controlOptionCanvas;
     [SerializeField] private GameObject audioOptionCanvas;
-
     public void QuitGame()
     {
         Application.Quit();
@@ -45,11 +45,30 @@ public class MenuSceneManager : Singleton<MenuSceneManager>
 
     public void GoToMain()
     {
+        playPackage.SetActive(false);
         mainPackage.SetActive(true);
         optionPackage.SetActive(false);
     }
 
-    public void PlayGame()
+    public void GotoPlayCanva()
+    {
+        mainPackage.SetActive(false);
+        playPackage.SetActive(true);
+    }
+
+    public void PlayNewGame()
+    {
+        PlayerPrefs.SetInt("NewGame", 1);
+        PlayGame();
+    }
+
+    public void PlayContinueGame()
+    {
+        PlayerPrefs.SetInt("NewGame", 0);
+        PlayGame();
+    }
+
+    private void PlayGame()
     {
         Color c = hideOutImage.color;
         c.a = 0;
@@ -58,7 +77,8 @@ public class MenuSceneManager : Singleton<MenuSceneManager>
         Sequence se = DOTween.Sequence();
 
         se.Join(DOTween.To(() => mainCamera.Lens.FieldOfView,
-                    x => {
+                    x =>
+                    {
                         var lens = mainCamera.Lens;
                         lens.FieldOfView = x;
                         mainCamera.Lens = lens;

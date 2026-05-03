@@ -170,6 +170,7 @@ public class GameController : Singleton<GameController>
         PlayerPrefs.SetInt(currentDoll.GetComponent<Doll>().dollID.ToString(), 1); // 1 for Already tested
         PlayerPrefs.SetInt(currentDoll.GetComponent<Doll>().dollID.ToString() + "_isTypeCorrect", currentDoll.GetComponent<Doll>().dollTestStatus.isTypeCorrect ? 1 : 0); // 1 for true, 0 for false
         PlayerPrefs.SetInt(currentDoll.GetComponent<Doll>().dollID.ToString() + "_isTestCorrect", IsPlayerTestCorrect() ? 1 : 0); // 1 for true, 0 for false
+        PlayerPrefs.Save();
         ResetCondition();
         dollsHasDone.Add(currentDoll);
         dollsToCheck.RemoveAt(0);
@@ -226,6 +227,7 @@ public class GameController : Singleton<GameController>
         }
 
         dollTestResult = currentDoll.GetComponent<Doll>().dollSO.testResults;
+        SaveData();
 
         if (paperIns != null)
         {
@@ -234,6 +236,28 @@ public class GameController : Singleton<GameController>
         storyPaper.GetComponent<StoryPaperCanva>().UpdateStoryPaper(currentDoll.GetComponent<Doll>().dollSO);
         paperIns = Instantiate(paperPrefab, spawnPointForPaper.position, spawnPointForPaper.rotation);
     }
+
+    private void SaveData()
+    {
+        PlayerPrefs.SetFloat("PlayerPosX", ResetItemManager.Instance.player.transform.position.x);
+        PlayerPrefs.SetFloat("PlayerPosY", ResetItemManager.Instance.player.transform.position.y);
+        PlayerPrefs.SetFloat("PlayerPosZ", ResetItemManager.Instance.player.transform.position.z);
+
+        PlayerPrefs.SetFloat("TempurationPosX", ResetItemManager.Instance.tempuration.transform.position.x);
+        PlayerPrefs.SetFloat("TempurationPosY", ResetItemManager.Instance.tempuration.transform.position.y);
+        PlayerPrefs.SetFloat("TempurationPosZ", ResetItemManager.Instance.tempuration.transform.position.z);
+
+        PlayerPrefs.SetFloat("ScissorPosX", ResetItemManager.Instance.scissor.transform.position.x);
+        PlayerPrefs.SetFloat("ScissorPosY", ResetItemManager.Instance.scissor.transform.position.y);
+        PlayerPrefs.SetFloat("ScissorPosZ", ResetItemManager.Instance.scissor.transform.position.z);
+
+        PlayerPrefs.SetFloat("FlashlightPosX", ResetItemManager.Instance.flashlight.transform.position.x);
+        PlayerPrefs.SetFloat("FlashlightPosY", ResetItemManager.Instance.flashlight.transform.position.y);
+        PlayerPrefs.SetFloat("FlashlightPosZ", ResetItemManager.Instance.flashlight.transform.position.z);
+
+        PlayerPrefs.Save();
+    }
+
 
     // For UI paper
     public void HideAllPaper()

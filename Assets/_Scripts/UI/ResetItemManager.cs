@@ -5,6 +5,7 @@ public class ResetItemManager : Singleton<ResetItemManager>
     public GameObject tempuration;
     public GameObject scissor;
     public GameObject flashlight;
+    public GameObject player;
 
     [SerializeField] private Vector3 temPos;
     [SerializeField] private Vector3 scissorPos;

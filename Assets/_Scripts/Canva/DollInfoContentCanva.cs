@@ -24,6 +24,8 @@ public class DollInfoContentCanva : MonoBehaviour
 
     public GameObject dollReadStoryButton;
 
+    public Image dollFace;
+
     private void OnDisable()
     {
         ToggleResultInfo(false);
@@ -42,6 +44,7 @@ public class DollInfoContentCanva : MonoBehaviour
         dollOwner.text = doll.dollSO.dollOwner;
         dollDescription.text = doll.dollSO.dollStory;
         dollStoryText.text = doll.dollSO.dollStory;
+        dollFace.sprite = doll.dollSO.dollAvatar;
 
         if (doll.dollTestStatus.isTestCorrect)
         {

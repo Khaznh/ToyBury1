@@ -34,7 +34,10 @@ public class DialogueManager : Singleton<DialogueManager>
 
     private void Start()
     {
-        StartDialogue(startSO, GameController.Instance.endGameSource);
+        if (SaveGameManager.Instance.newGame)
+        {
+            StartDialogue(startSO, GameController.Instance.endGameSource);
+        }
     }
 
     private void OnSkipPressed(UnityEngine.InputSystem.InputAction.CallbackContext context)

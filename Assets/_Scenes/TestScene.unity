@@ -27771,7 +27771,16 @@ MonoBehaviour:
   sitTranForNorSit: {fileID: 442608650}
   checkTranForSafe: {fileID: 861484321}
   checkTranForUnSafe: {fileID: 265033150}
-  dollsToCheck: []
+  dollsToCheck:
+  - {fileID: 1398745639858767806, guid: 24426d76e212c3b469e4812317280839, type: 3}
+  - {fileID: 7359273439262421533, guid: ff954db059144374b8be5877be170f15, type: 3}
+  - {fileID: 3377372047776247574, guid: 40d724c227d078c44a11db0a94d8af75, type: 3}
+  - {fileID: 4069943736301757242, guid: 8d9da2c3590892441ae17e663becce42, type: 3}
+  - {fileID: 4017413477536748422, guid: f57f4e9739f3e384986f548a8053d44d, type: 3}
+  - {fileID: 2910603830655142824, guid: da664e89eb63dc445a70d553e66774ce, type: 3}
+  - {fileID: 8557733862508826976, guid: cdcacd6b62e372b4a84b9dfeb5f3d1d6, type: 3}
+  - {fileID: 7952659157116581046, guid: 03d5017ee1ede5843af7b44717ef8c7e, type: 3}
+  - {fileID: 5010342602041779251, guid: 2169fa1fa4ef60d4fa146520d5b0bb6d, type: 3}
   dollsHasDone: []
   currentDoll: {fileID: 0}
   spawnPointForDoll: {fileID: 326718457}
@@ -32582,6 +32591,7 @@ MonoBehaviour:
   tempuration: {fileID: 168634266}
   scissor: {fileID: 537696143}
   flashlight: {fileID: 98576575}
+  player: {fileID: 1915383208}
   temPos: {x: 11.436, y: 0.411, z: 12.391}
   scissorPos: {x: 11.264, y: 0.377, z: 11.294}
   flashPos: {x: 11.35, y: 0.409, z: 13.392}
@@ -32598,6 +32608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SaveGameManager
   dollHasDone: 0
+  newGame: 0
 --- !u!1 &1968603129
 GameObject:
   m_ObjectHideFlags: 0
@@ -35080,6 +35091,18 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 953434474741719286, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 953434474741719286, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 953434474741719286, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 956109356756866496, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -35216,6 +35239,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PC
       objectReference: {fileID: 0}
+    - target: {fileID: 3215047122394691216, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3292424666986092035, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -35254,6 +35281,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3504070441843629141, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3961140361251947627, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4006288959302281424, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
@@ -35390,6 +35421,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5106474039141012993, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121814299662584501, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5146167550638395453, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
@@ -35598,6 +35633,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7215110381593397828, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251176354397803762, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7419258364255736243, guid: 40791d8e94efed54c928e6ff8c710d37, type: 3}
