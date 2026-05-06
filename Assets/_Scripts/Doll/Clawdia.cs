@@ -81,7 +81,7 @@ public class Clawdia : Doll
         rb.AddForce(dirVetor * jumpForce, ForceMode.Impulse);
 
         yield return new WaitForSeconds(2.25f);
-        GameController.Instance.targetCanva.SetActive(false);
+        GameController.Instance.targetCanva.SetActive(true);
         FocusCanvas.Instance.DisableFocus();
         GameController.Instance.SetPlayerControl(true);
     }

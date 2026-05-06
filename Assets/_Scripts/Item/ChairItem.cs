@@ -11,6 +11,7 @@ public class ChairItem : Item
 
         if (GameController.Instance.isInAudioTest)
         {
+            CanvaManager.Instance.ShowDangerText("Your doll is currently in audio test.");
             return;
         }
 

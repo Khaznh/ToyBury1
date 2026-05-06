@@ -60,7 +60,7 @@ public class Anna : Doll
         GameController.Instance.ForceToTurnOff();
 
         yield return new WaitForSeconds(2f);
-        GameController.Instance.targetCanva.SetActive(false);
+        GameController.Instance.targetCanva.SetActive(true);
         FocusCanvas.Instance.DisableFocus();
         GameController.Instance.SetPlayerControl(true);
     }

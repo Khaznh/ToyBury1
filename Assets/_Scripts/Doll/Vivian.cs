@@ -50,7 +50,7 @@ public class Vivian : Doll
         sfxChanel.RaiseEvent(dollSO.dollCallName, GameController.Instance.playerAudioSource);
 
         yield return new WaitForSeconds(2.5f);
-        GameController.Instance.targetCanva.SetActive(false);
+        GameController.Instance.targetCanva.SetActive(true);
         FocusCanvas.Instance.DisableFocus();
         GameController.Instance.SetPlayerControl(true);
     }

@@ -71,6 +71,7 @@ public class GameController : Singleton<GameController>
 
     public Sprite safeImgSource;
     public Sprite unsafeImgSource;
+    public Sprite untickSource;
 
     private int andyTestCount = 0;
     private int andyEscapeMaxCount = 2;
@@ -95,7 +96,7 @@ public class GameController : Singleton<GameController>
         isCallName = false;
         isTempuration = false;
         isScissor = false;
-        isCallName = true;
+        isCallName = false;
         isPhotoTaken = false;
     }
 
@@ -165,6 +166,11 @@ public class GameController : Singleton<GameController>
         {
             int hasDoneCount = PlayerPrefs.GetInt("DollHasDone", 0);
             PlayerPrefs.SetInt("DollHasDone", hasDoneCount);
+        }
+
+        if (paperIns != null)
+        {
+            Destroy(paperIns);
         }
 
         PlayerPrefs.SetInt(currentDoll.GetComponent<Doll>().dollID.ToString(), 1); // 1 for Already tested

@@ -118,7 +118,7 @@ MonoBehaviour:
   sfxChanel: {fileID: 11400000, guid: d1f339a1939ad1c40b57c156acd6e332, type: 2}
   dollAudioSource: {fileID: 0}
   dollID: 5
-  jumpForce: 20
+  jumpForce: 5
 --- !u!1 &5940848621153630634
 GameObject:
   m_ObjectHideFlags: 0

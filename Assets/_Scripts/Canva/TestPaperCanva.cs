@@ -96,6 +96,10 @@ public class TestPaperCanva : MonoBehaviour
         {
             testResultImgs[index].sprite = GameController.Instance.unsafeImgSource;
         }
+        else
+        {
+            testResultImgs[index].sprite = GameController.Instance.untickSource;
+        }
     }
 }
 

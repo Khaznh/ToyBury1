@@ -79,7 +79,7 @@ public class Maria : Doll
 
         transform.SetParent(null);
 
-        if (GameController.Instance.mainDoorOpen)
+        if (!GameController.Instance.mainDoorOpen)
         {
             transform.position = spawnPointTrans.GetChild(0).position;
             transform.rotation = spawnPointTrans.GetChild(0).rotation;
@@ -91,7 +91,7 @@ public class Maria : Doll
         }
 
         yield return new WaitForSeconds(2f);
-        GameController.Instance.targetCanva.SetActive(false);
+        GameController.Instance.targetCanva.SetActive(true);
         FocusCanvas.Instance.DisableFocus();
         GameController.Instance.SetPlayerControl(true);
     }
