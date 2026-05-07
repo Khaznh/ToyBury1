@@ -59,6 +59,14 @@ public class ReportPaperItem : CanPickUpItem
     public override void OnExitItem()
     {
         ThrowAwayItem(this.gameObject);
+        if (GameController.Instance.IsPaperCanvaActive())
+        {
+            UpdateUI();
+            GameController.Instance.SetPlayerCursor(false);
+            GameController.Instance.SetPlayerControl(true);
+            GameController.Instance.ShowTargetCanva();
+            return;
+        }
     }
 
     private void UpdateUI()
