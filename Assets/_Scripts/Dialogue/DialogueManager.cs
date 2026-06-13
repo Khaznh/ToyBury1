@@ -133,7 +133,7 @@ public class DialogueManager : Singleton<DialogueManager>
             DOTween.Complete(DialogueCanvas.Instance.dialogText);
         } else
         {
-            if (line.answers != null) { return; }
+            if (line.answers.Count > 0) { return; }
             DisplayDialogueLine();
         }
     }

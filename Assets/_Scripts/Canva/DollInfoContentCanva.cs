@@ -43,7 +43,7 @@ public class DollInfoContentCanva : MonoBehaviour
         dollName.text = doll.dollSO.dollName;
         dollOwner.text = doll.dollSO.dollOwner;
         dollDescription.text = doll.dollSO.dollStory;
-        dollStoryText.text = doll.dollSO.dollStory;
+        dollStoryText.text = doll.dollSO.dollReason;
         dollFace.sprite = doll.dollSO.dollAvatar;
 
         if (doll.dollTestStatus.isTestCorrect)

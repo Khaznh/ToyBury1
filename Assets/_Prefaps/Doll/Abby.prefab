@@ -245,7 +245,7 @@ MonoBehaviour:
     isTestCorrect: 0
     isTypeCorrect: 0
   sfxChanel: {fileID: 11400000, guid: d1f339a1939ad1c40b57c156acd6e332, type: 2}
-  dollAudioSource: {fileID: 0}
+  dollAudioSource: {fileID: 2773084638398237007}
   dollID: 7
   dialogueInfo: {fileID: 11400000, guid: 4f354e7e98907c8438e980ceff6798f6, type: 2}
   jumpForce: 10
